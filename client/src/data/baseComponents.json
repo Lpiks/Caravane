@@ -1,0 +1,2683 @@
+[
+  {
+    "id": "bed-fixed",
+    "name": "Fixed Transverse Bed",
+    "category": "Living & Dining",
+    "type": "parametric",
+    "defaultL": 185,
+    "defaultW": 140,
+    "defaultH": 45,
+    "icon": "Ruler",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "platform",
+        "name": "Slatted Platform",
+        "shape": "box",
+        "size": [
+          185,
+          140,
+          10
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#9ca3af",
+        "isColorable": false,
+        "visibleInStates": []
+      },
+      {
+        "id": "mattress",
+        "name": "Thick Mattress",
+        "shape": "box",
+        "size": [
+          185,
+          135,
+          35
+        ],
+        "offset": [
+          0,
+          10,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#d97706",
+        "isColorable": true,
+        "roughness": 0.9,
+        "visibleInStates": []
+      },
+      {
+        "id": "pillowL",
+        "name": "Left Pillow",
+        "shape": "box",
+        "size": [
+          40,
+          30,
+          10
+        ],
+        "offset": [
+          -45,
+          45,
+          40
+        ],
+        "rotation": [
+          15,
+          0,
+          0
+        ],
+        "color": "#f8fafc",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "pillowR",
+        "name": "Right Pillow",
+        "shape": "box",
+        "size": [
+          40,
+          30,
+          10
+        ],
+        "offset": [
+          45,
+          45,
+          40
+        ],
+        "rotation": [
+          15,
+          0,
+          0
+        ],
+        "color": "#f8fafc",
+        "isColorable": true,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "shower-cabin",
+    "name": "Indoor Shower Cabin",
+    "category": "Bathroom & Plumbing",
+    "type": "parametric",
+    "defaultL": 70,
+    "defaultW": 70,
+    "defaultH": 190,
+    "icon": "Ruler",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "walls",
+        "name": "Frosted Glass Walls",
+        "shape": "box",
+        "size": [
+          70,
+          70,
+          190
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#bae6fd",
+        "isColorable": true,
+        "roughness": 0.4,
+        "opacity": 0.4,
+        "visibleInStates": []
+      },
+      {
+        "id": "pan",
+        "name": "Shower Pan Base",
+        "shape": "box",
+        "size": [
+          70,
+          70,
+          10
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#f8fafc",
+        "isColorable": false,
+        "visibleInStates": []
+      },
+      {
+        "id": "head",
+        "name": "Shower Head",
+        "shape": "cylinder",
+        "size": [
+          8,
+          8,
+          10
+        ],
+        "offset": [
+          0,
+          170,
+          -25
+        ],
+        "rotation": [
+          45,
+          0,
+          0
+        ],
+        "color": "#9ca3af",
+        "isColorable": false,
+        "metalness": 0.9,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "kitchen-galley",
+    "name": "Standard Kitchen Block",
+    "category": "Kitchen & Galley",
+    "type": "static",
+    "defaultL": 120,
+    "defaultW": 60,
+    "defaultH": 90,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "base",
+        "name": "Base Cabinet",
+        "shape": "box",
+        "size": [
+          120,
+          60,
+          90
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#9ca3af",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "counter",
+        "name": "Countertop",
+        "shape": "box",
+        "size": [
+          120,
+          62,
+          4
+        ],
+        "offset": [
+          0,
+          90,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#d1d5db",
+        "roughness": 0.2,
+        "metalness": 0.9,
+        "visibleInStates": []
+      },
+      {
+        "id": "sink",
+        "name": "Recessed Sink",
+        "shape": "box",
+        "size": [
+          30,
+          30,
+          4.5
+        ],
+        "offset": [
+          30,
+          90,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#9ca3af",
+        "roughness": 0.1,
+        "metalness": 0.9,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "upright-fridge",
+    "name": "12V Upright Fridge",
+    "category": "Kitchen & Galley",
+    "type": "static",
+    "defaultL": 50,
+    "defaultW": 50,
+    "defaultH": 140,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "body",
+        "name": "Main Body",
+        "shape": "box",
+        "size": [
+          50,
+          50,
+          140
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#374151",
+        "visibleInStates": []
+      },
+      {
+        "id": "door",
+        "name": "Silver Door",
+        "shape": "box",
+        "size": [
+          46,
+          4,
+          132
+        ],
+        "offset": [
+          0,
+          4,
+          27
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#e5e7eb",
+        "roughness": 0.2,
+        "metalness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "handle",
+        "name": "Door Handle",
+        "shape": "box",
+        "size": [
+          2,
+          2,
+          30
+        ],
+        "offset": [
+          -15,
+          75,
+          30
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#9ca3af",
+        "metalness": 0.9,
+        "visibleInStates": []
+      },
+      {
+        "id": "vent",
+        "name": "Compressor Vent",
+        "shape": "box",
+        "size": [
+          46,
+          1,
+          8
+        ],
+        "offset": [
+          0,
+          1,
+          26
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#111827",
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "cooktop",
+    "name": "Recessed Induction Cooktop",
+    "category": "Kitchen & Galley",
+    "type": "static",
+    "defaultL": 50,
+    "defaultW": 35,
+    "defaultH": 8,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "glass",
+        "name": "Glass Base",
+        "shape": "box",
+        "size": [
+          50,
+          35,
+          8
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#0F172A",
+        "roughness": 0.1,
+        "metalness": 0.9,
+        "visibleInStates": []
+      },
+      {
+        "id": "burner-l",
+        "name": "Left Burner",
+        "shape": "cylinder",
+        "size": [
+          16,
+          16,
+          1
+        ],
+        "offset": [
+          -12.5,
+          8,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#64748B",
+        "visibleInStates": []
+      },
+      {
+        "id": "burner-r",
+        "name": "Right Burner",
+        "shape": "cylinder",
+        "size": [
+          12,
+          12,
+          1
+        ],
+        "offset": [
+          12.5,
+          8,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#64748B",
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "gas-locker",
+    "name": "Sealed LPG Gas Locker",
+    "category": "Kitchen & Galley",
+    "type": "static",
+    "defaultL": 35,
+    "defaultW": 35,
+    "defaultH": 55,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "locker",
+        "name": "Main Locker",
+        "shape": "box",
+        "size": [
+          35,
+          35,
+          55
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#EAB308",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "lid",
+        "name": "Sealed Lid",
+        "shape": "box",
+        "size": [
+          30,
+          30,
+          2
+        ],
+        "offset": [
+          0,
+          55,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#374151",
+        "visibleInStates": []
+      },
+      {
+        "id": "badge",
+        "name": "Hazard Badge",
+        "shape": "box",
+        "size": [
+          12,
+          1,
+          12
+        ],
+        "offset": [
+          0,
+          21.5,
+          18
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#000000",
+        "visibleInStates": []
+      },
+      {
+        "id": "diamond",
+        "name": "Yellow Diamond",
+        "shape": "box",
+        "size": [
+          7,
+          1,
+          7
+        ],
+        "offset": [
+          0,
+          21.5,
+          19
+        ],
+        "rotation": [
+          0,
+          45,
+          0
+        ],
+        "color": "#EAB308",
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "battery-bank",
+    "name": "Lithium Battery Bank",
+    "category": "Power & Utilities",
+    "type": "static",
+    "defaultL": 40,
+    "defaultW": 30,
+    "defaultH": 40,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "box",
+        "name": "Main Battery Box",
+        "shape": "box",
+        "size": [
+          40,
+          30,
+          40
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#eab308",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "term1",
+        "name": "Positive Terminal",
+        "shape": "cylinder",
+        "size": [
+          4,
+          4,
+          4
+        ],
+        "offset": [
+          -10,
+          42,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#ef4444",
+        "isColorable": false,
+        "visibleInStates": []
+      },
+      {
+        "id": "term2",
+        "name": "Negative Terminal",
+        "shape": "cylinder",
+        "size": [
+          4,
+          4,
+          4
+        ],
+        "offset": [
+          10,
+          42,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#000000",
+        "isColorable": false,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "water-tank",
+    "name": "120L Water Tank",
+    "category": "Uncategorized",
+    "type": "static",
+    "defaultL": 60,
+    "defaultW": 80,
+    "defaultH": 40,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "body",
+        "name": "Cylindrical Body",
+        "shape": "cylinder",
+        "size": [
+          40,
+          40,
+          60
+        ],
+        "offset": [
+          0,
+          -10,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          90
+        ],
+        "color": "#0ea5e9",
+        "isColorable": true,
+        "opacity": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "cap1",
+        "name": "Left End Cap",
+        "shape": "cylinder",
+        "size": [
+          36,
+          36,
+          4
+        ],
+        "offset": [
+          -30,
+          18,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          90
+        ],
+        "color": "#1f2937",
+        "isColorable": false,
+        "visibleInStates": []
+      },
+      {
+        "id": "cap2",
+        "name": "Right End Cap",
+        "shape": "cylinder",
+        "size": [
+          36,
+          36,
+          4
+        ],
+        "offset": [
+          30,
+          18,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          90
+        ],
+        "color": "#1f2937",
+        "isColorable": false,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "solar-array",
+    "name": "400W Solar Array",
+    "category": "Climate & Roof",
+    "layer": "roof",
+    "type": "static",
+    "defaultL": 100,
+    "defaultW": 150,
+    "defaultH": 10,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "frame",
+        "name": "Silver Frame",
+        "shape": "box",
+        "size": [
+          100,
+          150,
+          10
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#9ca3af",
+        "isColorable": false,
+        "metalness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "glass",
+        "name": "Photovoltaic Glass",
+        "shape": "box",
+        "size": [
+          95,
+          145,
+          1
+        ],
+        "offset": [
+          0,
+          10,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1e3a8a",
+        "isColorable": true,
+        "roughness": 0.1,
+        "metalness": 0.8,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "cassette-toilet",
+    "name": "Cassette Toilet",
+    "category": "Bathroom & Plumbing",
+    "type": "static",
+    "defaultL": 40,
+    "defaultW": 50,
+    "defaultH": 50,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "base",
+        "name": "Housing Base",
+        "shape": "box",
+        "size": [
+          40,
+          50,
+          25
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#f1f5f9",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "bowl",
+        "name": "Toilet Bowl",
+        "shape": "cylinder",
+        "size": [
+          36,
+          40,
+          12.5
+        ],
+        "offset": [
+          0,
+          25,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#ffffff",
+        "isColorable": false,
+        "visibleInStates": []
+      },
+      {
+        "id": "seat",
+        "name": "Seat Lid",
+        "shape": "cylinder",
+        "size": [
+          36,
+          40,
+          4
+        ],
+        "offset": [
+          0,
+          37.5,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#e5e7eb",
+        "isColorable": false,
+        "visibleInStates": []
+      },
+      {
+        "id": "tank",
+        "name": "Flush Tank",
+        "shape": "box",
+        "size": [
+          40,
+          16,
+          33
+        ],
+        "offset": [
+          0,
+          25,
+          -17
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#f1f5f9",
+        "isColorable": true,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "grey-water-tank",
+    "name": "Underbody Grey Water Tank",
+    "category": "Bathroom & Plumbing",
+    "type": "static",
+    "defaultL": 90,
+    "defaultW": 40,
+    "defaultH": 25,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "body",
+        "name": "Main Tank Body",
+        "shape": "box",
+        "size": [
+          90,
+          40,
+          25
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#334155",
+        "isColorable": true,
+        "roughness": 0.2,
+        "opacity": 0.4,
+        "visibleInStates": []
+      },
+      {
+        "id": "pipe",
+        "name": "Outlet Pipe",
+        "shape": "cylinder",
+        "size": [
+          6,
+          6,
+          8
+        ],
+        "offset": [
+          45,
+          12.5,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          90
+        ],
+        "color": "#9ca3af",
+        "isColorable": false,
+        "metalness": 0.8,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "dinette-seating",
+    "name": "Dinette Bench Seating",
+    "category": "Living & Dining",
+    "type": "static",
+    "defaultL": 100,
+    "defaultW": 50,
+    "defaultH": 20,
+    "icon": "Box",
+    "states": [
+      "default",
+      "Bed"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "base",
+        "name": "Wooden Base Frame",
+        "shape": "box",
+        "size": [
+          100,
+          50,
+          20
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#9ca3af",
+        "isColorable": false,
+        "visibleInStates": []
+      },
+      {
+        "id": "cushion",
+        "name": "Seat Cushion",
+        "shape": "box",
+        "size": [
+          100,
+          50,
+          10
+        ],
+        "offset": [
+          0,
+          20,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#d97706",
+        "isColorable": true,
+        "roughness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "backrest",
+        "name": "Backrest Cushion",
+        "shape": "box",
+        "size": [
+          100,
+          20,
+          30
+        ],
+        "offset": {
+          "default": [
+            0,
+            30,
+            -15
+          ],
+          "Bed": [
+            0,
+            5,
+            -40
+          ]
+        },
+        "rotation": {
+          "default": [
+            -6,
+            0,
+            0
+          ],
+          "Bed": [
+            90,
+            0,
+            0
+          ]
+        },
+        "color": "#d97706",
+        "isColorable": true,
+        "roughness": 0.8,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "lagun-table",
+    "name": "Lagun Swivel Table",
+    "category": "Living & Dining",
+    "type": "static",
+    "defaultL": 60,
+    "defaultW": 40,
+    "defaultH": 70,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "post",
+        "name": "Metal Post Base",
+        "shape": "cylinder",
+        "size": [
+          3,
+          3,
+          40
+        ],
+        "offset": [
+          -20,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#94a3b8",
+        "isColorable": false,
+        "metalness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "arm",
+        "name": "Swivel Arm",
+        "shape": "box",
+        "size": [
+          30,
+          4,
+          8
+        ],
+        "offset": [
+          -15,
+          40,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#94a3b8",
+        "isColorable": false,
+        "metalness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "tabletop",
+        "name": "Wooden Tabletop",
+        "shape": "box",
+        "size": [
+          60,
+          40,
+          4
+        ],
+        "offset": [
+          0,
+          44,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#b45309",
+        "isColorable": true,
+        "roughness": 0.3,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "swivel-seat",
+    "name": "Swivel Front Seat",
+    "category": "Living & Dining",
+    "type": "static",
+    "defaultL": 60,
+    "defaultW": 60,
+    "defaultH": 90,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "base",
+        "name": "Base Cylinder",
+        "shape": "cylinder",
+        "size": [
+          24,
+          24,
+          30
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1E293B",
+        "isColorable": false,
+        "roughness": 0.2,
+        "metalness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "seat",
+        "name": "Seat Cushion",
+        "shape": "box",
+        "size": [
+          50,
+          60,
+          10
+        ],
+        "offset": [
+          0,
+          30,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#475569",
+        "isColorable": true,
+        "roughness": 0.9,
+        "visibleInStates": []
+      },
+      {
+        "id": "back",
+        "name": "Slanted Backrest",
+        "shape": "box",
+        "size": [
+          50,
+          10,
+          50
+        ],
+        "offset": [
+          0,
+          40,
+          -20
+        ],
+        "rotation": [
+          -10,
+          0,
+          0
+        ],
+        "color": "#475569",
+        "isColorable": true,
+        "roughness": 0.9,
+        "visibleInStates": []
+      },
+      {
+        "id": "armL",
+        "name": "Left Armrest",
+        "shape": "box",
+        "size": [
+          5,
+          30,
+          5
+        ],
+        "offset": [
+          -22,
+          40,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1E293B",
+        "isColorable": false,
+        "visibleInStates": []
+      },
+      {
+        "id": "armR",
+        "name": "Right Armrest",
+        "shape": "box",
+        "size": [
+          5,
+          30,
+          5
+        ],
+        "offset": [
+          22,
+          40,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1E293B",
+        "isColorable": false,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "sofa-bed",
+    "name": "Folding Sofa Bed",
+    "category": "Living & Dining",
+    "type": "static",
+    "defaultL": 180,
+    "defaultW": 60,
+    "defaultH": 50,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "frame",
+        "name": "Metal Frame Base",
+        "shape": "box",
+        "size": [
+          180,
+          55,
+          15
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#475569",
+        "isColorable": false,
+        "metalness": 0.9,
+        "visibleInStates": []
+      },
+      {
+        "id": "seat",
+        "name": "Sofa Seat Cushion",
+        "shape": "box",
+        "size": [
+          180,
+          48,
+          15
+        ],
+        "offset": [
+          0,
+          15,
+          6
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#d97706",
+        "isColorable": true,
+        "roughness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "back",
+        "name": "Upright Backrest",
+        "shape": "box",
+        "size": [
+          180,
+          18,
+          35
+        ],
+        "offset": [
+          0,
+          30,
+          -21
+        ],
+        "rotation": [
+          -8,
+          0,
+          0
+        ],
+        "color": "#d97706",
+        "isColorable": true,
+        "roughness": 0.8,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "tall-wardrobe",
+    "name": "Tall Wardrobe Closet",
+    "category": "Living & Dining",
+    "type": "static",
+    "defaultL": 50,
+    "defaultW": 45,
+    "defaultH": 190,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "body",
+        "name": "Wardrobe Cabinet Body",
+        "shape": "box",
+        "size": [
+          50,
+          45,
+          190
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#4b5563",
+        "isColorable": true,
+        "roughness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "doorL",
+        "name": "Left Door Panel",
+        "shape": "box",
+        "size": [
+          24,
+          1,
+          186
+        ],
+        "offset": [
+          -12,
+          2,
+          23
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#4b5563",
+        "isColorable": true,
+        "roughness": 0.7,
+        "visibleInStates": []
+      },
+      {
+        "id": "doorR",
+        "name": "Right Door Panel",
+        "shape": "box",
+        "size": [
+          24,
+          1,
+          186
+        ],
+        "offset": [
+          12,
+          2,
+          23
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#4b5563",
+        "isColorable": true,
+        "roughness": 0.7,
+        "visibleInStates": []
+      },
+      {
+        "id": "handleL",
+        "name": "Left Handle",
+        "shape": "box",
+        "size": [
+          1.5,
+          1.5,
+          15
+        ],
+        "offset": [
+          -3,
+          87.5,
+          24
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#475569",
+        "isColorable": false,
+        "metalness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "handleR",
+        "name": "Right Handle",
+        "shape": "box",
+        "size": [
+          1.5,
+          1.5,
+          15
+        ],
+        "offset": [
+          3,
+          87.5,
+          24
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#475569",
+        "isColorable": false,
+        "metalness": 0.8,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "engine-cushion",
+    "name": "Engine Deck Cushion",
+    "category": "Living & Dining",
+    "type": "static",
+    "defaultL": 180,
+    "defaultW": 60,
+    "defaultH": 40,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "base",
+        "name": "Engine Deck Wooden Base",
+        "shape": "box",
+        "size": [
+          180,
+          60,
+          20
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#9ca3af",
+        "isColorable": false,
+        "visibleInStates": []
+      },
+      {
+        "id": "cushion",
+        "name": "Padded Mattress",
+        "shape": "box",
+        "size": [
+          178,
+          58,
+          20
+        ],
+        "offset": [
+          0,
+          20,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#f59e0b",
+        "isColorable": true,
+        "roughness": 0.9,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "inverter-hub",
+    "name": "Inverter & Power Hub",
+    "category": "Power & Utilities",
+    "type": "static",
+    "defaultL": 25,
+    "defaultW": 22,
+    "defaultH": 50,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "box",
+        "name": "Main Hub Box",
+        "shape": "box",
+        "size": [
+          25,
+          22,
+          50
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1D4ED8",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "dial",
+        "name": "Power Dial",
+        "shape": "cylinder",
+        "size": [
+          4,
+          4,
+          1
+        ],
+        "offset": [
+          0,
+          41.1,
+          11.5
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "color": "#FACC15",
+        "isColorable": false,
+        "visibleInStates": []
+      },
+      {
+        "id": "socketL",
+        "name": "AC Socket Left",
+        "shape": "box",
+        "size": [
+          4,
+          1,
+          4
+        ],
+        "offset": [
+          -6.2,
+          12.5,
+          11.5
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#000000",
+        "isColorable": false,
+        "visibleInStates": []
+      },
+      {
+        "id": "socketR",
+        "name": "AC Socket Right",
+        "shape": "box",
+        "size": [
+          4,
+          1,
+          4
+        ],
+        "offset": [
+          6.2,
+          12.5,
+          11.5
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#000000",
+        "isColorable": false,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "diesel-heater",
+    "name": "Diesel Air Heater",
+    "category": "Power & Utilities",
+    "type": "static",
+    "defaultL": 40,
+    "defaultW": 30,
+    "defaultH": 30,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "body",
+        "name": "Heater Body",
+        "shape": "box",
+        "size": [
+          40,
+          30,
+          30
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1E293B",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "pipe",
+        "name": "Hot Air Output Pipe",
+        "shape": "cylinder",
+        "size": [
+          8,
+          8,
+          4
+        ],
+        "offset": [
+          22,
+          5.5,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          90
+        ],
+        "color": "#EA580C",
+        "isColorable": false,
+        "metalness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "grill",
+        "name": "Intake Grill",
+        "shape": "box",
+        "size": [
+          1,
+          15,
+          10
+        ],
+        "offset": [
+          20.5,
+          17.5,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#111827",
+        "isColorable": false,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "control-panel",
+    "name": "System Touch Panel",
+    "category": "Power & Utilities",
+    "type": "static",
+    "defaultL": 20,
+    "defaultW": 4,
+    "defaultH": 15,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "bezel",
+        "name": "Black Bezel",
+        "shape": "box",
+        "size": [
+          20,
+          4,
+          15
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#000000",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "screen",
+        "name": "Glowing Screen",
+        "shape": "box",
+        "size": [
+          18,
+          1,
+          13
+        ],
+        "offset": [
+          0,
+          1,
+          2.5
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#06B6D4",
+        "isColorable": true,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "cargo-tray",
+    "name": "Slide-Out Cargo Tray",
+    "category": "Power & Utilities",
+    "type": "static",
+    "defaultL": 100,
+    "defaultW": 140,
+    "defaultH": 15,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "base",
+        "name": "Tray Base Frame",
+        "shape": "box",
+        "size": [
+          100,
+          140,
+          15
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#64748B",
+        "isColorable": true,
+        "roughness": 0.5,
+        "metalness": 0.5,
+        "visibleInStates": []
+      },
+      {
+        "id": "inner",
+        "name": "Inner Tray Floor",
+        "shape": "box",
+        "size": [
+          96,
+          136,
+          12.1
+        ],
+        "offset": [
+          0,
+          3,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1e293b",
+        "isColorable": false,
+        "metalness": 0.5,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "roof-ac",
+    "name": "Roof AC Unit",
+    "category": "Climate & Roof",
+    "layer": "roof",
+    "type": "static",
+    "defaultL": 70,
+    "defaultW": 70,
+    "defaultH": 20,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "body",
+        "name": "AC Shroud",
+        "shape": "box",
+        "size": [
+          70,
+          70,
+          20
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#f8fafc",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "fan",
+        "name": "Top Fan Grille",
+        "shape": "cylinder",
+        "size": [
+          46.6,
+          46.6,
+          1
+        ],
+        "offset": [
+          0,
+          20,
+          -17.5
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#111827",
+        "isColorable": false,
+        "visibleInStates": []
+      },
+      {
+        "id": "vents",
+        "name": "Rear Vents",
+        "shape": "box",
+        "size": [
+          60,
+          1,
+          10
+        ],
+        "offset": [
+          0,
+          5,
+          35.5
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#111827",
+        "isColorable": false,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "maxxair-fan",
+    "name": "Maxxair Roof Vent",
+    "category": "Climate & Roof",
+    "layer": "roof",
+    "type": "static",
+    "defaultL": 40,
+    "defaultW": 40,
+    "defaultH": 10,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "flange",
+        "name": "Base Flange",
+        "shape": "box",
+        "size": [
+          40,
+          40,
+          5
+        ],
+        "offset": [
+          0,
+          -5,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1f2937",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "lid",
+        "name": "Vent Lid",
+        "shape": "box",
+        "size": [
+          40,
+          40,
+          5
+        ],
+        "offset": [
+          0,
+          2.5,
+          10
+        ],
+        "rotation": [
+          -23,
+          0,
+          0
+        ],
+        "color": "#1f2937",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "blades",
+        "name": "Fan Blades",
+        "shape": "cylinder",
+        "size": [
+          32,
+          32,
+          1
+        ],
+        "offset": [
+          0,
+          0.5,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#111827",
+        "isColorable": false,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "overhead-locker",
+    "name": "Ceiling Storage Locker",
+    "category": "Climate & Roof",
+    "layer": "overhead",
+    "type": "static",
+    "defaultL": 140,
+    "defaultW": 40,
+    "defaultH": 30,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "box",
+        "name": "Main Locker Box",
+        "shape": "box",
+        "size": [
+          140,
+          40,
+          30
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#9ca3af",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "handleL",
+        "name": "Left Handle",
+        "shape": "box",
+        "size": [
+          20,
+          2,
+          2
+        ],
+        "offset": [
+          -46.6,
+          6.5,
+          21
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#94a3b8",
+        "isColorable": false,
+        "metalness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "handleR",
+        "name": "Right Handle",
+        "shape": "box",
+        "size": [
+          20,
+          2,
+          2
+        ],
+        "offset": [
+          46.6,
+          6.5,
+          21
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#94a3b8",
+        "isColorable": false,
+        "metalness": 0.8,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "side-awning",
+    "name": "Side Roll-Out Awning",
+    "category": "Climate & Roof",
+    "layer": "roof",
+    "placementX": "door-side",
+    "type": "static",
+    "defaultL": 350,
+    "defaultW": 15,
+    "defaultH": 15,
+    "icon": "Box",
+    "states": [
+      "default"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "cassette",
+        "name": "Cassette Housing",
+        "shape": "cylinder",
+        "size": [
+          15,
+          15,
+          350
+        ],
+        "offset": [
+          0,
+          -167.5,
+          0
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "color": "#94A3B8",
+        "isColorable": true,
+        "metalness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "fabric",
+        "name": "Extended Awning",
+        "shape": "box",
+        "size": [
+          200,
+          340,
+          2
+        ],
+        "offset": [
+          100,
+          1.5,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#F59E0B",
+        "isColorable": true,
+        "opacity": 0.3,
+        "visibleInStates": []
+      }
+    ]
+  },
+  {
+    "id": "pop-top-roof",
+    "name": "Pop-Top Roof Extension",
+    "category": "Climate & Roof",
+    "layer": "roof",
+    "type": "static",
+    "defaultL": 130,
+    "defaultW": 280,
+    "defaultH": 15,
+    "icon": "Box",
+    "states": [
+      "default",
+      "open"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "base",
+        "name": "Roof Base",
+        "shape": "box",
+        "size": [
+          130,
+          280,
+          5
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1e293b",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "top",
+        "name": "Fiberglass Shell",
+        "shape": "box",
+        "size": [
+          130,
+          280,
+          10
+        ],
+        "offset": {
+          "default": [
+            0,
+            5,
+            0
+          ],
+          "open": [
+            0,
+            53,
+            -10
+          ]
+        },
+        "rotation": {
+          "default": [
+            0,
+            0,
+            0
+          ],
+          "open": [
+            -20,
+            0,
+            0
+          ]
+        },
+        "color": "#1E293B",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "canvas-left",
+        "name": "Left Canvas",
+        "shape": "wedge",
+        "size": [
+          263,
+          2,
+          96
+        ],
+        "offset": [
+          -64,
+          5,
+          -8
+        ],
+        "rotation": [
+          0,
+          90,
+          0
+        ],
+        "color": "#cbd5e1",
+        "isColorable": false,
+        "visibleInStates": [
+          "open"
+        ]
+      },
+      {
+        "id": "canvas-right",
+        "name": "Right Canvas",
+        "shape": "wedge",
+        "size": [
+          263,
+          2,
+          96
+        ],
+        "offset": [
+          64,
+          5,
+          -8
+        ],
+        "rotation": [
+          0,
+          90,
+          0
+        ],
+        "color": "#cbd5e1",
+        "isColorable": false,
+        "visibleInStates": [
+          "open"
+        ]
+      },
+      {
+        "id": "canvas-front",
+        "name": "Front Canvas",
+        "shape": "box",
+        "size": [
+          126,
+          2,
+          96
+        ],
+        "offset": [
+          0,
+          5,
+          122
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#cbd5e1",
+        "isColorable": false,
+        "visibleInStates": [
+          "open"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "custom-1787115619254",
+    "name": "Side Roll-Out Awning",
+    "category": "Climate & Roof",
+    "type": "static",
+    "defaultL": 15,
+    "defaultW": 15,
+    "defaultH": 350,
+    "states": [
+      "default",
+      "Open"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "cassette",
+        "name": "Cassette Housing",
+        "shape": "cylinder",
+        "size": [
+          15,
+          15,
+          350
+        ],
+        "offset": [
+          0,
+          -167.5,
+          0
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "color": "#94A3B8",
+        "isColorable": false,
+        "metalness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "fabric",
+        "name": "Extended Awning",
+        "shape": "box",
+        "size": [
+          200,
+          340,
+          2
+        ],
+        "offset": [
+          100,
+          1.5,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#F59E0B",
+        "isColorable": false,
+        "opacity": 0.3,
+        "visibleInStates": [
+          "Open"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "custom-1787116150836",
+    "name": "Dinette Bench Seating",
+    "category": "Living & Dining",
+    "type": "static",
+    "defaultL": 100,
+    "defaultW": 50,
+    "defaultH": 20,
+    "states": [
+      "default",
+      "Bed"
+    ],
+    "compatibleChassis": [
+      "compact-classic",
+      "standard-highroof",
+      "minibus-canvas"
+    ],
+    "parts": [
+      {
+        "id": "base",
+        "name": "Wooden Base Frame",
+        "shape": "box",
+        "size": [
+          100,
+          50,
+          20
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#9ca3af",
+        "isColorable": true,
+        "visibleInStates": []
+      },
+      {
+        "id": "cushion",
+        "name": "Seat Cushion",
+        "shape": "box",
+        "size": [
+          100,
+          50,
+          10
+        ],
+        "offset": [
+          0,
+          20,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#d97706",
+        "isColorable": true,
+        "roughness": 0.8,
+        "visibleInStates": []
+      },
+      {
+        "id": "backrest",
+        "name": "Backrest Cushion",
+        "shape": "box",
+        "size": [
+          100,
+          20,
+          30
+        ],
+        "offset": {
+          "default": [
+            0,
+            30,
+            -15
+          ],
+          "Bed": [
+            0,
+            5,
+            -40
+          ]
+        },
+        "rotation": {
+          "default": [
+            -6,
+            0,
+            0
+          ],
+          "Bed": [
+            90,
+            0,
+            0
+          ]
+        },
+        "color": "#d97706",
+        "isColorable": true,
+        "roughness": 0.8,
+        "visibleInStates": []
+      }
+    ]
+  }
+]

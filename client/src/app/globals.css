@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-terracotta: #C85A32;
+  --color-sand: #E8D8C8;
+  --color-oasis: #2E4A3E;
+  --color-obsidian: #181A1D;
+  --color-linen: #F8F6F2;
+
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Base resets */
+html,
+body {
+  width: 100%;
+  overflow-x: clip;
+  background-color: var(--color-linen);
+  color: var(--color-obsidian);
+}
+
+/* Global Interactions */
+a,
+button {
+  cursor: pointer;
+}
+
+/* Custom utilities for 3D canvases */
+.canvas-container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-obsidian);
+  /* Default dark mode for showroom */
+}
+
+/* Custom Scrollbar for all elements */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(232, 216, 200, 0.2);
+  /* faint sand */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terracotta);
+  /* terracotta on hover */
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(232, 216, 200, 0.2) transparent;
+}
+
+/* Glass Scrollbar Utility for floating panels */
+.glass-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.glass-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.glass-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+.glass-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* High Visibility Custom Scrollbar Utility */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.35); /* sky-blue thumb */
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.6);
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 189, 248, 0.35) rgba(255, 255, 255, 0.03);
+}

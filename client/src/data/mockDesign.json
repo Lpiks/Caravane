@@ -1,0 +1,46 @@
+{
+  "clientInfo": {
+    "name": "Ahmed K.",
+    "email": "ahmed@example.dz",
+    "phone": "+213 555 12 34 56"
+  },
+  "baseVehicle": "Peugeot Boxer L3H2",
+  "status": "Pending",
+  "configurationData": {
+    "colors": {
+      "exterior": "#2E4A3E",
+      "interiorCabinets": "#181A1D",
+      "upholstery": "#C85A32"
+    },
+    "components": [
+      {
+        "id": "module_bed_1",
+        "typeId": "bed-fixed",
+        "type": "Fixed Transverse Bed",
+        "position": [0, 0, -1.5],
+        "dimensions": [1.4, 0.45, 1.95],
+        "color": "#C85A32",
+        "layer": "furniture"
+      },
+      {
+        "id": "module_kitchen_1",
+        "typeId": "kitchen-galley",
+        "type": "Kitchen Sink & Counter",
+        "position": [0.6, 0, 0.5],
+        "dimensions": [0.6, 0.9, 1.2],
+        "color": "#181A1D",
+        "layer": "furniture"
+      },
+      {
+        "id": "module_solar_1",
+        "typeId": "solar-array",
+        "type": "Solar Panels (2x)",
+        "position": [0, 2.3, 0],
+        "dimensions": [1.2, 0.05, 2.0],
+        "color": "#222222",
+        "layer": "roof"
+      }
+    ]
+  },
+  "message": "Looking for a setup similar to your Instagram post but with a larger water tank."
+}

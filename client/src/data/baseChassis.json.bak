@@ -1,0 +1,1888 @@
+[
+  {
+    "id": "t3",
+    "name": "VW Transporter T3",
+    "type": "compact",
+    "chassisType": "t3",
+    "defaultL": 460,
+    "defaultW": 190,
+    "defaultH": 200,
+    "states": [
+      "default"
+    ],
+    "parts": [
+      {
+        "id": "part-1",
+        "name": "Main Floor",
+        "shape": "box",
+        "size": [
+          457,
+          180,
+          10
+        ],
+        "offset": [
+          42,
+          15,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#3A3D40",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.8
+      },
+      {
+        "id": "part-2",
+        "name": "Front Nose",
+        "shape": "box",
+        "size": [
+          4,
+          180,
+          90
+        ],
+        "offset": [
+          268,
+          30,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          5
+        ],
+        "color": "#c2410c",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-3",
+        "name": "Windshield",
+        "shape": "window",
+        "size": [
+          4,
+          180,
+          90
+        ],
+        "offset": [
+          260,
+          120,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          9
+        ],
+        "color": "#1e3a8a",
+        "opacity": 0.1,
+        "metalness": 0.5,
+        "roughness": 0.1
+      },
+      {
+        "id": "part-4",
+        "name": "Rear Lower",
+        "shape": "box",
+        "size": [
+          4,
+          176,
+          90
+        ],
+        "offset": [
+          -185,
+          30,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#c2410c",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-5",
+        "name": "Rear Window",
+        "shape": "window",
+        "size": [
+          4,
+          160,
+          80
+        ],
+        "offset": [
+          -185,
+          125,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1e3a8a",
+        "opacity": 0.1,
+        "metalness": 0.5,
+        "roughness": 0.1
+      },
+      {
+        "id": "part-6",
+        "name": "Rear Pillar L",
+        "shape": "box",
+        "size": [
+          4,
+          10,
+          90
+        ],
+        "offset": [
+          -185,
+          120,
+          85
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#c2410c",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-7",
+        "name": "Rear Pillar R",
+        "shape": "box",
+        "size": [
+          4,
+          10,
+          90
+        ],
+        "offset": [
+          -185,
+          120,
+          -85
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#c2410c",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-8",
+        "name": "Rear Top",
+        "shape": "box",
+        "size": [
+          4,
+          180,
+          10
+        ],
+        "offset": [
+          -185,
+          203,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#c2410c",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-9",
+        "name": "Front Roof Rack",
+        "shape": "box",
+        "size": [
+          90,
+          170,
+          5
+        ],
+        "offset": [
+          225,
+          209,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#fef3c7",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-10",
+        "name": "Pop-Top Roof",
+        "shape": "box",
+        "size": [
+          367,
+          172,
+          6
+        ],
+        "offset": [
+          -4,
+          210,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#fef3c7",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-11",
+        "name": "Right Front Lower",
+        "shape": "box",
+        "size": [
+          160,
+          4,
+          90
+        ],
+        "offset": [
+          190,
+          30,
+          -88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#c2410c",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-12",
+        "name": "Right Mid Lower",
+        "shape": "box",
+        "size": [
+          137,
+          4,
+          90
+        ],
+        "offset": [
+          42,
+          30,
+          -88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#c2410c",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-13",
+        "name": "Right Rear Lower",
+        "shape": "box",
+        "size": [
+          160,
+          4,
+          90
+        ],
+        "offset": [
+          -107,
+          30,
+          -88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#c2410c",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-14",
+        "name": "Right Front Window",
+        "shape": "window",
+        "size": [
+          160,
+          4,
+          90
+        ],
+        "offset": [
+          190,
+          120,
+          -88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1e3a8a",
+        "opacity": 0.1,
+        "metalness": 0.5,
+        "roughness": 0.1
+      },
+      {
+        "id": "part-15",
+        "name": "Right Mid Window",
+        "shape": "window",
+        "size": [
+          137,
+          4,
+          90
+        ],
+        "offset": [
+          42,
+          120,
+          -88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1e3a8a",
+        "opacity": 0.1,
+        "metalness": 0.5,
+        "roughness": 0.1
+      },
+      {
+        "id": "part-16",
+        "name": "Right Rear Window",
+        "shape": "window",
+        "size": [
+          160,
+          4,
+          90
+        ],
+        "offset": [
+          -107,
+          120,
+          -88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1e3a8a",
+        "opacity": 0.1,
+        "metalness": 0.5,
+        "roughness": 0.1
+      },
+      {
+        "id": "part-17",
+        "name": "Right A-Pillar",
+        "shape": "box",
+        "size": [
+          10,
+          5,
+          95
+        ],
+        "offset": [
+          260,
+          118,
+          -88
+        ],
+        "rotation": [
+          0,
+          0,
+          9
+        ],
+        "color": "#fef3c7",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-18",
+        "name": "Right B-Pillar",
+        "shape": "box",
+        "size": [
+          15,
+          5,
+          90
+        ],
+        "offset": [
+          110,
+          120,
+          -88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#fef3c7",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-19",
+        "name": "Right C-Pillar",
+        "shape": "box",
+        "size": [
+          15,
+          5,
+          90
+        ],
+        "offset": [
+          -27,
+          120,
+          -88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#fef3c7",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-20",
+        "name": "Right D-Pillar",
+        "shape": "box",
+        "size": [
+          10,
+          5,
+          90
+        ],
+        "offset": [
+          -182,
+          120,
+          -88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#fef3c7",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-21",
+        "name": "Left Front Lower",
+        "shape": "box",
+        "size": [
+          160,
+          4,
+          90
+        ],
+        "offset": [
+          190,
+          30,
+          88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#c2410c",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-22",
+        "name": "Left Mid Lower",
+        "shape": "box",
+        "size": [
+          137,
+          4,
+          90
+        ],
+        "offset": [
+          42,
+          30,
+          89
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#c2410c",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-23",
+        "name": "Left Rear Lower",
+        "shape": "box",
+        "size": [
+          160,
+          4,
+          90
+        ],
+        "offset": [
+          -107,
+          30,
+          88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#c2410c",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-24",
+        "name": "Left Front Window",
+        "shape": "window",
+        "size": [
+          160,
+          4,
+          90
+        ],
+        "offset": [
+          190,
+          120,
+          88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1e3a8a",
+        "opacity": 0.1,
+        "metalness": 0.5,
+        "roughness": 0.1
+      },
+      {
+        "id": "part-25",
+        "name": "Left Mid Window",
+        "shape": "window",
+        "size": [
+          137,
+          4,
+          90
+        ],
+        "offset": [
+          42,
+          120,
+          89
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1e3a8a",
+        "opacity": 0.1,
+        "metalness": 0.5,
+        "roughness": 0.1
+      },
+      {
+        "id": "part-26",
+        "name": "Left Rear Window",
+        "shape": "window",
+        "size": [
+          160,
+          4,
+          90
+        ],
+        "offset": [
+          -107,
+          120,
+          88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1e3a8a",
+        "opacity": 0.1,
+        "metalness": 0.5,
+        "roughness": 0.1
+      },
+      {
+        "id": "part-27",
+        "name": "Left A-Pillar",
+        "shape": "box",
+        "size": [
+          10,
+          5,
+          95
+        ],
+        "offset": [
+          260,
+          118,
+          88
+        ],
+        "rotation": [
+          0,
+          0,
+          9
+        ],
+        "color": "#fef3c7",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-28",
+        "name": "Left B-Pillar",
+        "shape": "box",
+        "size": [
+          15,
+          5,
+          90
+        ],
+        "offset": [
+          110,
+          120,
+          88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#fef3c7",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-29",
+        "name": "Left C-Pillar",
+        "shape": "box",
+        "size": [
+          15,
+          5,
+          90
+        ],
+        "offset": [
+          -27,
+          120,
+          88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#fef3c7",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-30",
+        "name": "Left D-Pillar",
+        "shape": "box",
+        "size": [
+          10,
+          5,
+          90
+        ],
+        "offset": [
+          -182,
+          120,
+          88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#fef3c7",
+        "opacity": 0.15,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-31",
+        "name": "Front Bumper",
+        "shape": "box",
+        "size": [
+          20,
+          180,
+          20
+        ],
+        "offset": [
+          280,
+          35,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1f2937",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-32",
+        "name": "Rear Bumper",
+        "shape": "box",
+        "size": [
+          20,
+          180,
+          20
+        ],
+        "offset": [
+          -197,
+          35,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1f2937",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-33",
+        "name": "Wheel 1",
+        "shape": "wheel",
+        "size": [
+          60,
+          20,
+          60
+        ],
+        "offset": [
+          190,
+          0,
+          92
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "color": "#111827",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.9
+      },
+      {
+        "id": "part-34",
+        "name": "Wheel 2",
+        "shape": "wheel",
+        "size": [
+          60,
+          20,
+          60
+        ],
+        "offset": [
+          190,
+          0,
+          -92
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "color": "#111827",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.9
+      },
+      {
+        "id": "part-35",
+        "name": "Wheel 3",
+        "shape": "wheel",
+        "size": [
+          60,
+          20,
+          60
+        ],
+        "offset": [
+          -107,
+          0,
+          92
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "color": "#111827",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.9
+      },
+      {
+        "id": "part-36",
+        "name": "Wheel 4",
+        "shape": "wheel",
+        "size": [
+          60,
+          20,
+          60
+        ],
+        "offset": [
+          -107,
+          0,
+          -92
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "color": "#111827",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.9
+      },
+      {
+        "id": "part-37",
+        "name": "Door Indicator Red",
+        "shape": "box",
+        "size": [
+          137,
+          2,
+          180
+        ],
+        "offset": [
+          42,
+          30,
+          90
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#ef4444",
+        "opacity": 0.2,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-38",
+        "name": "Door Arrow Text",
+        "shape": "text",
+        "size": [
+          18,
+          18,
+          0
+        ],
+        "offset": [
+          42,
+          120,
+          85
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#ef4444",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7,
+        "textString": "◀ ─── ▶"
+      },
+      {
+        "id": "part-39",
+        "name": "Step Base",
+        "shape": "box",
+        "size": [
+          110,
+          8,
+          2
+        ],
+        "offset": [
+          42,
+          35,
+          94
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1f2937",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.8
+      },
+      {
+        "id": "part-40",
+        "name": "Step Trim",
+        "shape": "box",
+        "size": [
+          110,
+          1,
+          2
+        ],
+        "offset": [
+          42,
+          35,
+          98
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#d1d5db",
+        "opacity": 1,
+        "metalness": 0.9,
+        "roughness": 0.1
+      },
+      {
+        "id": "part-41",
+        "name": "Right D-Pillar Vent",
+        "shape": "box",
+        "size": [
+          15,
+          4,
+          80
+        ],
+        "offset": [
+          -162,
+          125,
+          88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1f2937",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-42",
+        "name": "Left D-Pillar Vent",
+        "shape": "box",
+        "size": [
+          15,
+          4,
+          80
+        ],
+        "offset": [
+          -162,
+          125,
+          -88
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1f2937",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-43",
+        "name": "Sliding Door Track",
+        "shape": "box",
+        "size": [
+          160,
+          1,
+          2
+        ],
+        "offset": [
+          -107,
+          114,
+          89
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1f2937",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.9
+      },
+      {
+        "id": "part-44",
+        "name": "Sliding Door Handle",
+        "shape": "box",
+        "size": [
+          12,
+          2,
+          4
+        ],
+        "offset": [
+          95,
+          103,
+          90
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1f2937",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.5
+      },
+      {
+        "id": "part-45",
+        "name": "Water Fill Cap",
+        "shape": "cylinder",
+        "size": [
+          8,
+          8,
+          2
+        ],
+        "offset": [
+          85,
+          89,
+          -86
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "color": "#ffffff",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.2
+      },
+      {
+        "id": "part-46",
+        "name": "Fridge Slats",
+        "shape": "box",
+        "size": [
+          25,
+          2,
+          18
+        ],
+        "offset": [
+          45,
+          81,
+          -86
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1f2937",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-47",
+        "name": "230V Socket",
+        "shape": "box",
+        "size": [
+          8,
+          2,
+          8
+        ],
+        "offset": [
+          5,
+          86,
+          -86
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#9ca3af",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.3
+      },
+      {
+        "id": "part-48",
+        "name": "Front Grille",
+        "shape": "box",
+        "size": [
+          4,
+          170,
+          22
+        ],
+        "offset": [
+          272,
+          77,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          5
+        ],
+        "color": "#1f2937",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.9
+      },
+      {
+        "id": "part-49",
+        "name": "VW Emblem",
+        "shape": "cylinder",
+        "size": [
+          14,
+          14,
+          2
+        ],
+        "offset": [
+          275,
+          87,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          -90
+        ],
+        "color": "#d1d5db",
+        "opacity": 1,
+        "metalness": 0.9,
+        "roughness": 0.1
+      },
+      {
+        "id": "part-50",
+        "name": "Right Headlight",
+        "shape": "cylinder",
+        "size": [
+          16,
+          16,
+          2
+        ],
+        "offset": [
+          274,
+          87,
+          68
+        ],
+        "rotation": [
+          0,
+          0,
+          -90
+        ],
+        "color": "#fffae6",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-51",
+        "name": "Left Headlight",
+        "shape": "cylinder",
+        "size": [
+          16,
+          16,
+          2
+        ],
+        "offset": [
+          274,
+          87,
+          -68
+        ],
+        "rotation": [
+          0,
+          0,
+          -90
+        ],
+        "color": "#fffae6",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-52",
+        "name": "Right Blinker",
+        "shape": "box",
+        "size": [
+          4,
+          13,
+          8
+        ],
+        "offset": [
+          269,
+          76,
+          68
+        ],
+        "rotation": [
+          0,
+          0,
+          5
+        ],
+        "color": "#f59e0b",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.3
+      },
+      {
+        "id": "part-53",
+        "name": "Left Blinker",
+        "shape": "box",
+        "size": [
+          4,
+          13,
+          8
+        ],
+        "offset": [
+          269,
+          76,
+          -68
+        ],
+        "rotation": [
+          0,
+          0,
+          5
+        ],
+        "color": "#f59e0b",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.3
+      },
+      {
+        "id": "part-54",
+        "name": "License Plate Frame",
+        "shape": "box",
+        "size": [
+          2,
+          38,
+          12
+        ],
+        "offset": [
+          -189,
+          56,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1f2937",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-55",
+        "name": "License Plate",
+        "shape": "box",
+        "size": [
+          1,
+          35,
+          9
+        ],
+        "offset": [
+          -190,
+          58,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#ffffff",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-56",
+        "name": "VW T3 Text",
+        "shape": "text",
+        "size": [
+          7,
+          7,
+          0
+        ],
+        "offset": [
+          -191,
+          62,
+          0
+        ],
+        "rotation": [
+          0,
+          270,
+          0
+        ],
+        "color": "#000000",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7,
+        "textString": "VW T3"
+      },
+      {
+        "id": "part-57",
+        "name": "Right Tail Light",
+        "shape": "box",
+        "size": [
+          2,
+          22,
+          14
+        ],
+        "offset": [
+          -188,
+          55,
+          68
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#ef4444",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.2
+      },
+      {
+        "id": "part-58",
+        "name": "Left Tail Light",
+        "shape": "box",
+        "size": [
+          2,
+          22,
+          14
+        ],
+        "offset": [
+          -188,
+          55,
+          -68
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#ef4444",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.2
+      },
+      {
+        "id": "part-59",
+        "name": "Tailgate Lock",
+        "shape": "cylinder",
+        "size": [
+          4,
+          4,
+          2
+        ],
+        "offset": [
+          -188,
+          77,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          -90
+        ],
+        "color": "#d1d5db",
+        "opacity": 1,
+        "metalness": 0.9,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-60",
+        "name": "Hubcap 1",
+        "shape": "cylinder",
+        "size": [
+          30,
+          30,
+          2
+        ],
+        "offset": [
+          190,
+          29,
+          82
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "color": "#d1d5db",
+        "opacity": 1,
+        "metalness": 0.8,
+        "roughness": 0.2
+      },
+      {
+        "id": "part-61",
+        "name": "Hubcap 2",
+        "shape": "cylinder",
+        "size": [
+          30,
+          30,
+          2
+        ],
+        "offset": [
+          190,
+          29,
+          -82
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "color": "#d1d5db",
+        "opacity": 1,
+        "metalness": 0.8,
+        "roughness": 0.2
+      },
+      {
+        "id": "part-62",
+        "name": "Hubcap 3",
+        "shape": "cylinder",
+        "size": [
+          30,
+          30,
+          2
+        ],
+        "offset": [
+          -107,
+          29,
+          82
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "color": "#d1d5db",
+        "opacity": 1,
+        "metalness": 0.8,
+        "roughness": 0.2
+      },
+      {
+        "id": "part-63",
+        "name": "Hubcap 4",
+        "shape": "cylinder",
+        "size": [
+          30,
+          30,
+          2
+        ],
+        "offset": [
+          -107,
+          29,
+          -82
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ],
+        "color": "#d1d5db",
+        "opacity": 1,
+        "metalness": 0.8,
+        "roughness": 0.2
+      },
+      {
+        "id": "part-64",
+        "name": "Dashboard",
+        "shape": "box",
+        "size": [
+          40,
+          160,
+          40
+        ],
+        "offset": [
+          235,
+          75,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#22252A",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.9
+      },
+      {
+        "id": "part-65",
+        "name": "Steering Wheel",
+        "shape": "cylinder",
+        "size": [
+          30,
+          30,
+          5
+        ],
+        "offset": [
+          235,
+          123,
+          40
+        ],
+        "rotation": [
+          0,
+          0,
+          -45
+        ],
+        "color": "#22252A",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-66",
+        "name": "Right Seat Pedestal",
+        "shape": "cylinder",
+        "size": [
+          16,
+          16,
+          30
+        ],
+        "offset": [
+          175,
+          30,
+          40
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1E293B",
+        "opacity": 1,
+        "metalness": 0.8,
+        "roughness": 0.2
+      },
+      {
+        "id": "part-67",
+        "name": "Right Seat Cushion",
+        "shape": "box",
+        "size": [
+          50,
+          50,
+          10
+        ],
+        "offset": [
+          175,
+          60,
+          40
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#22252A",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-68",
+        "name": "Right Seat Backrest",
+        "shape": "box",
+        "size": [
+          10,
+          50,
+          50
+        ],
+        "offset": [
+          155,
+          70,
+          40
+        ],
+        "rotation": [
+          0,
+          0,
+          6
+        ],
+        "color": "#22252A",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-69",
+        "name": "Right Seat Right Armrest",
+        "shape": "box",
+        "size": [
+          30,
+          5,
+          5
+        ],
+        "offset": [
+          175,
+          78,
+          62
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1E293B",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-70",
+        "name": "Right Seat Left Armrest",
+        "shape": "box",
+        "size": [
+          30,
+          5,
+          5
+        ],
+        "offset": [
+          175,
+          78,
+          18
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1E293B",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-71",
+        "name": "Left Seat Pedestal",
+        "shape": "cylinder",
+        "size": [
+          16,
+          16,
+          30
+        ],
+        "offset": [
+          175,
+          30,
+          -40
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1E293B",
+        "opacity": 1,
+        "metalness": 0.8,
+        "roughness": 0.2
+      },
+      {
+        "id": "part-72",
+        "name": "Left Seat Cushion",
+        "shape": "box",
+        "size": [
+          50,
+          50,
+          10
+        ],
+        "offset": [
+          175,
+          60,
+          -40
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#22252A",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-73",
+        "name": "Left Seat Backrest",
+        "shape": "box",
+        "size": [
+          10,
+          50,
+          50
+        ],
+        "offset": [
+          155,
+          70,
+          -40
+        ],
+        "rotation": [
+          0,
+          0,
+          6
+        ],
+        "color": "#22252A",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-74",
+        "name": "Left Seat Right Armrest",
+        "shape": "box",
+        "size": [
+          30,
+          5,
+          5
+        ],
+        "offset": [
+          175,
+          78,
+          -18
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1E293B",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      },
+      {
+        "id": "part-75",
+        "name": "Left Seat Left Armrest",
+        "shape": "box",
+        "size": [
+          30,
+          5,
+          5
+        ],
+        "offset": [
+          175,
+          78,
+          -62
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#1E293B",
+        "opacity": 1,
+        "metalness": 0.2,
+        "roughness": 0.7
+      }
+    ]
+  },
+  {
+    "id": "l3h2",
+    "name": "Peugeot Boxer L3H2",
+    "type": "extended",
+    "chassisType": "l3h2",
+    "defaultL": 600,
+    "defaultW": 205,
+    "defaultH": 252,
+    "states": [
+      "default"
+    ],
+    "parts": [
+      {
+        "id": "part-1",
+        "name": "Van Shell",
+        "shape": "box",
+        "size": [
+          600,
+          205,
+          252
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#f1f5f9"
+      }
+    ]
+  },
+  {
+    "id": "minibus",
+    "name": "Toyota Coaster",
+    "type": "minibus",
+    "chassisType": "minibus",
+    "defaultL": 700,
+    "defaultW": 210,
+    "defaultH": 260,
+    "states": [
+      "default"
+    ],
+    "parts": [
+      {
+        "id": "part-1",
+        "name": "Van Shell",
+        "shape": "box",
+        "size": [
+          700,
+          210,
+          260
+        ],
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "color": "#f1f5f9"
+      }
+    ]
+  }
+]
