@@ -21,7 +21,11 @@ connectDB().then(() => {
 });
 
 // Middleware
-const allowedOrigin = process.env.CLIENT_URL;
+let allowedOrigin = process.env.CLIENT_URL;
+if (allowedOrigin && allowedOrigin.endsWith('/')) {
+  allowedOrigin = allowedOrigin.slice(0, -1);
+}
+
 app.use(cors({
   origin: allowedOrigin ? allowedOrigin : '*',
   credentials: true
