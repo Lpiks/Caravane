@@ -43,3 +43,17 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+// Render Free-Tier Keep Alive Pinger
+// Render automatically injects RENDER_EXTERNAL_URL (e.g. https://my-app.onrender.com)
+const RENDER_URL = process.env.RENDER_EXTERNAL_URL;
+if (RENDER_URL) {
+  const https = require('https');
+  setInterval(() => {
+    https.get(RENDER_URL, (res) => {
+      console.log(`Keep-alive self-ping status: ${res.statusCode}`);
+    }).on('error', (err) => {
+      console.error('Keep-alive self-ping error:', err.message);
+    });
+  }, 13 * 60 * 1000); // Ping every 13 minutes
+}
