@@ -21,7 +21,11 @@ connectDB().then(() => {
 });
 
 // Middleware
-app.use(cors());
+const allowedOrigin = process.env.CLIENT_URL;
+app.use(cors({
+  origin: allowedOrigin ? allowedOrigin : '*',
+  credentials: true
+}));
 app.use(express.json()); // Parse JSON bodies
 
 // Basic root route
@@ -44,13 +48,16 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-// Render Free-Tier Keep Alive Pinger
-// Render automatically injects RENDER_EXTERNAL_URL (e.g. https://my-app.onrender.com)
-const RENDER_URL = process.env.RENDER_EXTERNAL_URL;
+// Keep Alive Pinger (Render/VPS/Local)
+// Set SELF_PING_URL in your .env or let Render auto-inject RENDER_EXTERNAL_URL
+const RENDER_URL = process.env.SELF_PING_URL || process.env.RENDER_EXTERNAL_URL;
 if (RENDER_URL) {
+  const http = require('http');
   const https = require('https');
+  const protocol = RENDER_URL.startsWith('https') ? https : http;
+  
   setInterval(() => {
-    https.get(RENDER_URL, (res) => {
+    protocol.get(RENDER_URL, (res) => {
       console.log(`Keep-alive self-ping status: ${res.statusCode}`);
     }).on('error', (err) => {
       console.error('Keep-alive self-ping error:', err.message);
