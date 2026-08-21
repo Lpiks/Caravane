@@ -7,7 +7,7 @@ const path = require('path');
 // @access  Public
 exports.getChassis = async (req, res) => {
   try {
-    const chassis = await Chassis.find();
+    const chassis = await Chassis.find().lean();
     res.json(chassis);
   } catch (error) {
     console.error(error);
@@ -20,7 +20,7 @@ exports.getChassis = async (req, res) => {
 // @access  Public
 exports.getChassisById = async (req, res) => {
   try {
-    const chassis = await Chassis.findOne({ id: req.params.id });
+    const chassis = await Chassis.findOne({ id: req.params.id }).lean();
     if (!chassis) {
       return res.status(404).json({ message: 'Chassis not found' });
     }

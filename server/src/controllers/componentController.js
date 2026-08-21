@@ -7,7 +7,7 @@ const path = require('path');
 // @access  Public (or Admin depending on your auth later)
 exports.getComponents = async (req, res) => {
   try {
-    const components = await Component.find();
+    const components = await Component.find().lean();
     res.json(components);
   } catch (error) {
     console.error(error);
@@ -20,7 +20,7 @@ exports.getComponents = async (req, res) => {
 // @access  Public
 exports.getComponentById = async (req, res) => {
   try {
-    const component = await Component.findOne({ id: req.params.id });
+    const component = await Component.findOne({ id: req.params.id }).lean();
     if (!component) {
       return res.status(404).json({ message: 'Component not found' });
     }

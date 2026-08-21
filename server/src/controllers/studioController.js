@@ -33,7 +33,7 @@ exports.saveDesign = async (req, res) => {
 // @route   GET /api/studio/designs
 exports.getAllDesigns = async (req, res) => {
   try {
-    const designs = await StudioDesign.find().sort({ createdAt: -1 });
+    const designs = await StudioDesign.find().select('-configurationData').sort({ createdAt: -1 }).lean();
     res.status(200).json(designs);
   } catch (error) {
     console.error('Error fetching designs:', error);
@@ -45,7 +45,7 @@ exports.getAllDesigns = async (req, res) => {
 // @route   GET /api/studio/designs/:id
 exports.getDesignById = async (req, res) => {
   try {
-    const design = await StudioDesign.findById(req.params.id);
+    const design = await StudioDesign.findById(req.params.id).lean();
     if (!design) {
       return res.status(404).json({ message: 'Design not found' });
     }

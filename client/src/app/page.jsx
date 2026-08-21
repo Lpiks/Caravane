@@ -1,14 +1,34 @@
 "use client";
 
 import { useState } from "react";
-import ShowroomCanvas from "@/components/3d/ShowroomCanvas";
-import GarageShowroom from "@/components/3d/GarageShowroom";
-import FeaturesBentoGrid from "@/components/home/FeaturesBentoGrid";
+import dynamic from "next/dynamic";
 import VehicleSwitcherBar from "@/components/ui/VehicleSwitcherBar";
 import ShowroomControls from "@/components/ui/ShowroomControls";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import useVehicleStore from "@/store/useVehicleStore";
+
+const ShowroomCanvas = dynamic(() => import("@/components/3d/ShowroomCanvas"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full absolute inset-0 bg-[#0d0e12] flex items-center justify-center text-sand/50 uppercase tracking-widest font-mono text-[10px] sm:text-xs">
+      Initializing 3D Showroom...
+    </div>
+  )
+});
+
+const GarageShowroom = dynamic(() => import("@/components/3d/GarageShowroom"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full bg-[#0a0a0c] flex items-center justify-center text-sand/50 uppercase tracking-widest font-mono text-[10px] sm:text-xs animate-pulse">
+      Preparing Turntable...
+    </div>
+  )
+});
+
+const FeaturesBentoGrid = dynamic(() => import("@/components/home/FeaturesBentoGrid"), {
+  ssr: false
+});
 
 export default function Home() {
   const { ambientEnvironment } = useVehicleStore();
@@ -73,7 +93,7 @@ export default function Home() {
 
       {/* UNIVERSAL SECTION NAVIGATION CONTROLS (RIGHT SIDE VERTICAL STACK ON ALL SCREENS) */}
       <div className={`flex absolute right-3 sm:right-8 flex-col gap-2.5 sm:gap-4 z-40 transition-all duration-700 ease-in-out ${
-        currentSection === 0 ? 'bottom-28 sm:bottom-8' : 'top-1/2 -translate-y-1/2'
+        currentSection === 0 ? 'bottom-36 sm:bottom-8' : 'top-1/2 -translate-y-1/2'
       }`}>
         <button
           onClick={() => setCurrentSection(Math.max(0, currentSection - 1))}

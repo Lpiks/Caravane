@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Sphere } from "@react-three/drei";
 import useVehicleStore from "@/store/useVehicleStore";
@@ -50,6 +50,27 @@ const ShowroomVehicle = ({ vehicleId, headlightsOn, customModules }) => {
   // Check if this vehicleId exists in our database chassis list
   const dbChassis = chassis.find(c => c.id === vehicleId);
 
+  // Memoized modules hydration with O(1) map lookup
+  const displayModules = useMemo(() => {
+    const raw = customModules || (dbTemplates.length > 0 ? dbTemplates[0].modules : []);
+    if (!raw) return [];
+    const compMap = new Map(components.map(c => [c.id, c]));
+    return raw.map(mod => {
+      const dbComp = compMap.get(mod.typeId);
+      if (dbComp) {
+        return {
+          ...mod,
+          parts: dbComp.parts,
+          defaultL: dbComp.defaultL,
+          defaultW: dbComp.defaultW,
+          defaultH: dbComp.defaultH,
+          chassisOverrides: dbComp.chassisOverrides
+        };
+      }
+      return mod;
+    });
+  }, [customModules, dbTemplates, components]);
+
   if (dbChassis) {
     const cx = dbChassis.centerX || 0;
     const cz = dbChassis.centerZ || 0;
@@ -60,27 +81,6 @@ const ShowroomVehicle = ({ vehicleId, headlightsOn, customModules }) => {
     if (floorPart && floorPart.offset && floorPart.size) {
       fh = ((floorPart.offset[1] || 0) + (floorPart.size[2] || 0)) * 0.01;
     }
-
-    const hydrateModules = (modulesArray) => {
-      if (!modulesArray) return [];
-      return modulesArray.map(mod => {
-        const dbComp = components.find(c => c.id === mod.typeId);
-        if (dbComp) {
-          return {
-            ...mod,
-            parts: dbComp.parts,
-            defaultL: dbComp.defaultL,
-            defaultW: dbComp.defaultW,
-            defaultH: dbComp.defaultH,
-            chassisOverrides: dbComp.chassisOverrides
-          };
-        }
-        return mod;
-      });
-    };
-
-    let rawModules = customModules || (dbTemplates.length > 0 ? dbTemplates[0].modules : []);
-    let displayModules = hydrateModules(rawModules);
 
     return (
       <group ref={groupRef} position={[0, fh, 0]}>
@@ -121,27 +121,6 @@ const ShowroomVehicle = ({ vehicleId, headlightsOn, customModules }) => {
   }
 
   const vanZOffset = cockpitLength / 2;
-
-  const hydrateModules2 = (modulesArray) => {
-    if (!modulesArray) return [];
-    return modulesArray.map(mod => {
-      const dbComp = components.find(c => c.id === mod.typeId);
-      if (dbComp) {
-        return {
-          ...mod,
-          parts: dbComp.parts,
-          defaultL: dbComp.defaultL,
-          defaultW: dbComp.defaultW,
-          defaultH: dbComp.defaultH,
-          chassisOverrides: dbComp.chassisOverrides
-        };
-      }
-      return mod;
-    });
-  };
-
-  let rawModules2 = customModules || (dbTemplates && dbTemplates.length > 0 ? dbTemplates[0].modules : []);
-  let displayModules = hydrateModules2(rawModules2);
 
   return (
     <group ref={groupRef}>

@@ -37,8 +37,12 @@ app.get('/', (req, res) => {
   res.send('Kouini Caravane API is running...');
 });
 
-// Mount API routes
-app.use('/api/inquiries', require('./routes/inquiryRoutes'));
+const { apiLimiter, sensitiveLimiter } = require('./middleware/rateLimiter');
+
+// Mount API routes (applying global rate limiter to all API endpoints)
+app.use('/api', apiLimiter);
+
+app.use('/api/inquiries', sensitiveLimiter, require('./routes/inquiryRoutes'));
 app.use('/api/vehicles', require('./routes/vehicleRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/studio', require('./routes/studioRoutes'));

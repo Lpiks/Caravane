@@ -363,7 +363,7 @@ export default function GarageShowroom() {
       </div>
 
       {/* Navigation Arrows for Templates (Prev / Next Template) */}
-      <div className="absolute bottom-20 sm:bottom-12 right-14 sm:right-24 md:right-28 flex items-center gap-2.5 sm:gap-4 z-10 pointer-events-auto">
+      <div className="absolute bottom-28 sm:bottom-12 right-14 sm:right-24 md:right-28 flex items-center gap-2.5 sm:gap-4 z-10 pointer-events-auto">
         <button
           onClick={prevTemplate}
           className="w-9 h-9 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-white hover:bg-white/20 hover:scale-105 transition-all shadow-xl active:scale-95"
@@ -381,7 +381,7 @@ export default function GarageShowroom() {
       </div>
 
       {/* Progress Bar (Bottom Center) */}
-      <div className="absolute bottom-32 sm:bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10 pointer-events-none">
+      <div className="absolute bottom-40 sm:bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10 pointer-events-none">
         <div className="flex gap-2">
           {templates.map((_, i) => (
             <div
