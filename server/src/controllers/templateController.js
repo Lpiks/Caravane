@@ -9,7 +9,7 @@ const getTemplates = async (req, res) => {
     if (req.query.chassisId) {
       filter.chassisId = req.query.chassisId;
     }
-    const templates = await Template.find(filter).sort({ createdAt: -1 });
+    const templates = await Template.find(filter).sort({ createdAt: -1 }).lean();
     res.json(templates);
   } catch (error) {
     console.error('Error fetching templates:', error);
@@ -22,7 +22,7 @@ const getTemplates = async (req, res) => {
 // @access  Public
 const getTemplateById = async (req, res) => {
   try {
-    const template = await Template.findById(req.params.id);
+    const template = await Template.findById(req.params.id).lean();
     if (!template) {
       return res.status(404).json({ message: 'Template not found' });
     }

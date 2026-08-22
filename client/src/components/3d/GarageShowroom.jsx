@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
+import React, { useRef, useState, useEffect, useLayoutEffect, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { ContactShadows, PerspectiveCamera, OrbitControls } from '@react-three/drei';
 import SafeEnvironment from './SafeEnvironment';
@@ -8,12 +8,14 @@ import * as THREE from 'three';
 import gsap from 'gsap';
 import { ChevronLeft, ChevronRight, Settings, Maximize2, Layers, Loader2 } from 'lucide-react';
 import axios from 'axios';
+import Link from 'next/link';
 
 const S = 1 / 100; // Scale down from cm to meters
 
 // Procedural part renderer using GSAP for exploded entry
 const AnimatedPart = ({ part, index, isActive, parentPosition, parentRotation, parentH }) => {
   const meshRef = useRef();
+  const isFirstRender = useRef(true);
 
   const isVisible = !(part.visibleInStates && Array.isArray(part.visibleInStates) && part.visibleInStates.length > 0 && !part.visibleInStates.includes('default'));
   if (!isVisible) return null;
@@ -42,6 +44,16 @@ const AnimatedPart = ({ part, index, isActive, parentPosition, parentRotation, p
 
   useLayoutEffect(() => {
     if (!meshRef.current) return;
+
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      if (!isActive) {
+        meshRef.current.visible = false;
+        meshRef.current.scale.set(0, 0, 0);
+        return;
+      }
+    }
+
     const ctx = gsap.context(() => {
       if (isActive) {
         meshRef.current.visible = true;
@@ -148,7 +160,7 @@ const Scene = ({ activeIndex, templates, dbChassis, dbComponents }) => {
   return (
     <>
       <PerspectiveCamera ref={cameraRef} makeDefault position={[5, 4, 6]} fov={45} />
-      <OrbitControls target={[0, 1, 0]} enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 2 - 0.05} />
+      <OrbitControls target={[0, 0.5, 0]} enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 2 - 0.05} />
 
       <fog attach="fog" args={['#0a0a0c', 15, 60]} />
 
@@ -316,11 +328,13 @@ export default function GarageShowroom() {
     <div className="relative w-full h-full bg-[#0a0a0c] overflow-hidden group">
       {/* 3D Canvas */}
       <Canvas shadows dpr={[1, 2]}>
-        <Scene activeIndex={activeIndex} templates={templates} dbChassis={dbChassis} dbComponents={dbComponents} />
+        <Suspense fallback={null}>
+          <Scene activeIndex={activeIndex} templates={templates} dbChassis={dbChassis} dbComponents={dbComponents} />
+        </Suspense>
       </Canvas>
 
-      {/* Glass UI Overlay - Compact on Mobile Side */}
-      <div className="absolute top-16 sm:top-1/2 sm:-translate-y-1/2 left-3 sm:left-8 md:left-16 w-[70vw] max-w-[260px] sm:w-80 pointer-events-none z-10">
+      {/* Glass UI Overlay - Shifted to Top-Left on Desktop */}
+      <div className="absolute top-16 sm:top-28 left-3 sm:left-8 md:left-16 w-[70vw] max-w-[260px] sm:w-80 pointer-events-none z-10">
         <div className="backdrop-blur-xl bg-zinc-950/70 border border-white/10 p-3 sm:p-8 rounded-xl sm:rounded-2xl shadow-2xl">
           <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-6">
             <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-sky-500/10 flex items-center justify-center border border-sky-500/20">
@@ -351,7 +365,7 @@ export default function GarageShowroom() {
                 {dimensionsStr}
               </span>
             </div>
-            <div className="flex items-center justify-between pb-0.5">
+            <div className="flex items-center justify-between pb-0.5 border-b border-white/5 pb-1.5 sm:pb-3">
               <span className="text-[9px] sm:text-xs text-slate-500 font-bold uppercase tracking-widest">Modules</span>
               <span className="text-[10px] sm:text-sm text-slate-200 font-mono flex items-center gap-1 sm:gap-2">
                 <Layers size={10} className="text-sky-500" />
@@ -359,11 +373,22 @@ export default function GarageShowroom() {
               </span>
             </div>
           </div>
+
+          {activeTemplate && (
+            <div className="mt-4 sm:mt-6 pointer-events-auto">
+              <Link
+                href={`/studio?template=${activeTemplate._id || activeTemplate.id}`}
+                className="w-full py-2.5 sm:py-3 bg-terracotta text-white font-bold uppercase tracking-widest text-[10px] sm:text-xs hover:bg-white hover:text-obsidian transition-colors rounded flex items-center justify-center gap-1.5 sm:gap-2 shadow-lg active:scale-95 transition-all text-center"
+              >
+                Customize in Studio
+              </Link>
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Navigation Arrows for Templates (Prev / Next Template) */}
-      <div className="absolute bottom-28 sm:bottom-12 right-14 sm:right-24 md:right-28 flex items-center gap-2.5 sm:gap-4 z-10 pointer-events-auto">
+      {/* Navigation Arrows for Templates (Prev / Next Template) - Lifted to bottom-20 */}
+      <div className="absolute bottom-28 sm:bottom-20 right-14 sm:right-24 md:right-28 flex items-center gap-2.5 sm:gap-4 z-10 pointer-events-auto">
         <button
           onClick={prevTemplate}
           className="w-9 h-9 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-white hover:bg-white/20 hover:scale-105 transition-all shadow-xl active:scale-95"
@@ -380,8 +405,8 @@ export default function GarageShowroom() {
         </button>
       </div>
 
-      {/* Progress Bar (Bottom Center) */}
-      <div className="absolute bottom-40 sm:bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10 pointer-events-none">
+      {/* Progress Bar (Bottom Center) - Lifted to bottom-24 */}
+      <div className="absolute bottom-40 sm:bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10 pointer-events-none">
         <div className="flex gap-2">
           {templates.map((_, i) => (
             <div

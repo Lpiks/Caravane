@@ -5,16 +5,17 @@ import ModuleSidebar3D from "@/components/studio/ModuleSidebar3D";
 import StudioCanvas3D from "@/components/studio/StudioCanvas3D";
 import PowerWaterGauge from "@/components/studio/PowerWaterGauge";
 import SubmitDesignButton from "@/components/studio/SubmitDesignButton";
-import { Settings, RefreshCcw, ChevronDown, ChevronRight, PackagePlus, Sliders, X } from "lucide-react";
+import { Settings, RefreshCcw, ChevronDown, ChevronRight, PackagePlus, Sliders, X, Loader2 } from "lucide-react";
 import ConfirmModal from "@/components/ui/ConfirmModal";
-import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { useState, useEffect, Suspense } from "react";
 import axios from "axios";
 import VehicleSetupModal from "@/components/studio/VehicleSetupModal";
 import useChassisStore from "@/store/useChassisStore";
 
-export default function Studio() {
-  const { activeChassis, activeModelId, setHasChosenVehicle, clearStudio, loadTemplate, driveSide, setDriveSide } = useStudioStore();
-  const { chassis } = useChassisStore();
+function StudioContent() {
+  const { activeChassis, activeModelId, setHasChosenVehicle, clearStudio, loadTemplate, driveSide, setDriveSide, setVehicle } = useStudioStore();
+  const { chassis, fetchChassis } = useChassisStore();
 
   const activeDbChassis = chassis.find(c => c.id === activeModelId);
 
@@ -25,6 +26,35 @@ export default function Studio() {
   // Mobile Drawer States
   const [isMobileCatalogOpen, setIsMobileCatalogOpen] = useState(false);
   const [isMobileSpecsOpen, setIsMobileSpecsOpen] = useState(false);
+
+  const searchParams = useSearchParams();
+  const templateId = searchParams.get('template');
+
+  // 1. Fetch chassis blueprints on mount to resolve model mappings
+  useEffect(() => {
+    fetchChassis();
+  }, [fetchChassis]);
+
+  // 2. Fetch template by URL param and auto-load into workspace
+  useEffect(() => {
+    if (templateId && chassis.length > 0) {
+      const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+      axios.get(`${API_BASE}/api/templates/${templateId}`)
+        .then(res => {
+          const template = res.data;
+          if (template) {
+            const matchingChassis = chassis.find(c => c.class === template.chassisId || c.id === template.chassisId);
+            if (matchingChassis) {
+              setVehicle(matchingChassis.class, matchingChassis.id);
+            } else {
+              setVehicle(template.chassisId, template.chassisId === 'compact-classic' ? 'vw-t3' : template.chassisId === 'standard-highroof' ? 'renault-master' : 'toyota-coaster');
+            }
+            loadTemplate(template.modules);
+          }
+        })
+        .catch(err => console.error("Error loading query template:", err));
+    }
+  }, [templateId, chassis, setVehicle, loadTemplate]);
 
   useEffect(() => {
     if (activeModelId) {
@@ -277,5 +307,18 @@ export default function Studio() {
       {/* Initial Vehicle Selector Setup Modal */}
       <VehicleSetupModal />
     </div>
+  );
+}
+
+export default function Studio() {
+  return (
+    <Suspense fallback={
+      <div className="w-full min-h-screen bg-obsidian flex flex-col items-center justify-center text-sand/50 uppercase tracking-widest font-mono text-xs gap-4">
+        <Loader2 className="animate-spin text-terracotta" size={40} />
+        <span>Loading Build Studio...</span>
+      </div>
+    }>
+      <StudioContent />
+    </Suspense>
   );
 }

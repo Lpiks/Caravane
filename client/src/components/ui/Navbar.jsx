@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Compass, Hammer, Map, Truck, Phone, Home, Menu, X } from "lucide-react";
+import { Compass, Hammer, Map, Truck, Phone, Home, Menu, X, Layers } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -24,7 +24,8 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "/", icon: Home },
     { name: "Studio", href: "/studio", icon: Hammer },
-    { name: "Eng", href: "/craft", icon: Truck },
+    { name: "Garage", href: "/garage", icon: Layers },
+    { name: "Craft", href: "/craft", icon: Truck },
     { name: "Expeditions", href: "/expeditions", icon: Map },
     { name: "Fleet", href: "/fleet", icon: Compass },
   ];
@@ -33,11 +34,11 @@ export default function Navbar() {
     <>
       <div className="fixed top-3 left-0 w-full z-50 flex justify-center px-3 sm:px-4 pointer-events-none">
         <nav className="pointer-events-auto w-full max-w-5xl bg-obsidian/80 backdrop-blur-2xl border border-white/10 rounded-[1.5rem] sm:rounded-[2rem] p-2 flex items-center justify-between shadow-2xl relative">
-          
+
           {/* LOGO */}
           <div className="pl-4 sm:pl-6 pr-2 sm:pr-4 flex items-center relative z-10">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-lg sm:text-xl font-black tracking-widest uppercase text-white hover:text-terracotta transition-colors"
             >
@@ -51,14 +52,13 @@ export default function Navbar() {
               const Icon = link.icon;
               const isActive = link.href === '/' ? pathname === '/' : pathname?.startsWith(link.href);
               return (
-                <Link 
+                <Link
                   key={link.name}
-                  href={link.href} 
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
-                    isActive 
-                      ? 'bg-white text-obsidian shadow-sm scale-100' 
+                  href={link.href}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 ${isActive
+                      ? 'bg-white text-obsidian shadow-sm scale-100'
                       : 'text-white/60 hover:text-white hover:bg-white/10 scale-95 hover:scale-100'
-                  }`}
+                    }`}
                 >
                   <Icon size={14} className={isActive ? 'text-terracotta' : ''} /> {link.name}
                 </Link>
@@ -66,14 +66,14 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* RIGHT ACTIONS: CONTACT & MOBILE TOGGLE */}
-          <div className="flex items-center gap-2 pr-1 relative z-10">
-            <Link 
-              href="/contact" 
+          {/* RIGHT ACTIONS: CONTACT & MOBILE TOGGLE - Shifted slightly right */}
+          <div className="flex items-center gap-2 pr-0 relative z-10">
+            <Link
+              href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-6 py-2.5 sm:py-3.5 bg-terracotta text-white rounded-[1.2rem] sm:rounded-[1.5rem] uppercase tracking-widest text-[11px] sm:text-xs font-bold hover:bg-white hover:text-terracotta transition-colors shadow-lg"
+              className="flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-3.5 bg-terracotta text-white rounded-[1.2rem] sm:rounded-[1.5rem] uppercase tracking-widest text-[11px] sm:text-xs font-bold hover:bg-white hover:text-terracotta transition-colors shadow-lg"
             >
-              <Phone size={13} /> 
+              <Phone size={13} />
               <span className="inline">Contact</span>
             </Link>
 
@@ -106,14 +106,13 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center gap-4 px-6 py-4 rounded-2xl text-base font-bold uppercase tracking-widest transition-all ${
-                    isActive
-                      ? 'bg-terracotta text-white shadow-xl border border-terracotta/50'
-                      : 'bg-white/5 border border-white/10 text-white/80 hover:bg-white/10 hover:text-white'
-                  }`}
+                  className={`flex items-center gap-4 px-6 py-4 rounded-2xl text-base font-bold uppercase tracking-widest transition-all ${isActive
+                    ? 'bg-terracotta text-white shadow-xl border border-terracotta/50'
+                    : 'bg-white/5 border border-white/10 text-white/80 hover:bg-white/10 hover:text-white'
+                    }`}
                 >
                   <Icon size={20} className={isActive ? 'text-white' : 'text-terracotta'} />
-                  <span>{link.name === 'Eng' ? 'Engineering & Craft' : link.name}</span>
+                  <span>{link.name === 'Craft' ? 'Engineering & Craft' : link.name}</span>
                 </Link>
               );
             })}

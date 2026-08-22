@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import VehicleSwitcherBar from "@/components/ui/VehicleSwitcherBar";
-import ShowroomControls from "@/components/ui/ShowroomControls";
-import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowRight, Hammer, Layers, Settings, Compass } from "lucide-react";
 import Link from "next/link";
 import useVehicleStore from "@/store/useVehicleStore";
+import ShowroomControls from "@/components/ui/ShowroomControls";
+import { useEffect } from "react";
 
 const ShowroomCanvas = dynamic(() => import("@/components/3d/ShowroomCanvas"), {
   ssr: false,
@@ -17,22 +17,12 @@ const ShowroomCanvas = dynamic(() => import("@/components/3d/ShowroomCanvas"), {
   )
 });
 
-const GarageShowroom = dynamic(() => import("@/components/3d/GarageShowroom"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full bg-[#0a0a0c] flex items-center justify-center text-sand/50 uppercase tracking-widest font-mono text-[10px] sm:text-xs animate-pulse">
-      Preparing Turntable...
-    </div>
-  )
-});
-
 const FeaturesBentoGrid = dynamic(() => import("@/components/home/FeaturesBentoGrid"), {
   ssr: false
 });
 
 export default function Home() {
   const { ambientEnvironment } = useVehicleStore();
-  const [currentSection, setCurrentSection] = useState(0);
 
   const isNight = ambientEnvironment === 'campfire-night';
   const isSunset = ambientEnvironment === 'sahara-sunset';
@@ -42,79 +32,120 @@ export default function Home() {
   const subTextClass = isNight ? 'text-linen/70' : 'text-obsidian/70';
 
   return (
-    <main className={`relative w-full min-h-[100dvh] h-screen overflow-hidden transition-colors duration-1000 ${bgClass}`}>
+    <main className={`relative w-full min-h-[100dvh] transition-colors duration-1000 ${bgClass}`}>
 
-      {/* Sliding Container */}
-      <div
-        className="w-full h-full transition-transform duration-1000 ease-[cubic-bezier(0.65,0,0.35,1)]"
-        style={{ transform: `translateY(-${currentSection * 100}%)` }}
-      >
+      {/* SECTION 0: SHOWROOM HERO */}
+      <section className="relative w-full h-[100dvh] flex flex-col items-center justify-center shrink-0">
+        <ShowroomCanvas />
 
-        {/* SECTION 0: SHOWROOM */}
-        <section className="relative w-full h-full flex flex-col items-center justify-center">
-          <ShowroomCanvas />
+        {/* Floating UI Overlay: Headline */}
+        <div className="absolute top-16 left-4 sm:top-20 sm:left-12 max-w-[85vw] sm:max-w-md md:max-w-lg pointer-events-none z-10 transition-colors duration-1000">
+          <h1 className={`text-2xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.95] sm:leading-[0.9] opacity-90 ${textClass}`}>
+            Crafted For <br />
+            <span className="text-terracotta">Algerian</span> <br />
+            Off-Grid <br />
+            Journeys.
+          </h1>
+          <p className={`mt-2 sm:mt-6 font-mono text-[11px] sm:text-sm max-w-xs sm:max-w-sm ${subTextClass}`}>
+            Select a chassis below. Configure your environment. Step into your next expedition.
+          </p>
 
-          {/* Floating UI Overlay: Headline */}
-          <div className="absolute top-16 left-4 sm:top-20 sm:left-12 max-w-[85vw] sm:max-w-md md:max-w-lg pointer-events-none z-10 transition-colors duration-1000">
-            <h1 className={`text-2xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.95] sm:leading-[0.9] opacity-90 ${textClass}`}>
-              Crafted For <br />
-              <span className="text-terracotta">Algerian</span> <br />
-              Off-Grid <br />
-              Journeys.
-            </h1>
-            <p className={`mt-2 sm:mt-6 font-mono text-[11px] sm:text-sm max-w-xs sm:max-w-sm ${subTextClass}`}>
-              Select a chassis below. Configure your environment. Step into your next expedition.
+          {/* CTA Button */}
+          <Link
+            href="/studio"
+            className="mt-3 sm:mt-8 inline-flex items-center gap-2 sm:gap-3 px-4 py-2.5 sm:px-8 sm:py-4 bg-obsidian text-linen font-bold uppercase tracking-widest text-[11px] sm:text-sm hover:bg-terracotta transition-colors rounded-sm pointer-events-auto shadow-lg active:scale-95"
+          >
+            Enter Build Studio <ArrowRight size={14} />
+          </Link>
+        </div>
+
+        <ShowroomControls />
+      </section>
+
+      {/* SECTION 1: ABOUT & TECHNICAL SPECIFICATIONS */}
+      <section id="about-section" className="relative w-full min-h-screen bg-[#0d0e12] border-t border-white/5 flex items-center justify-center py-20 px-6 z-10">
+        <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Column: Mission Narrative */}
+          <div className="space-y-6">
+            <span className="text-xs font-bold text-terracotta uppercase tracking-widest block font-mono">
+              Born in Chéraga, Proven in the Sahara
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-bold uppercase tracking-tight text-white leading-none">
+              Overland Autonomy, <br />
+              Without Compromise.
+            </h2>
+            <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
+              Kouini Caravane is Algiers' premier off-grid campervan workshop. We combine local Algerian craftsmanship with world-class electrical and insulation engineering. Every build is designed in our interactive 3D studio, CNC-machined from marine plywood, and welded to conquer the rugged Atlas and Saharan terrains.
             </p>
-
-            {/* CTA Button */}
-            <Link
-              href="/studio"
-              className="mt-3 sm:mt-8 inline-flex items-center gap-2 sm:gap-3 px-4 py-2.5 sm:px-8 sm:py-4 bg-obsidian text-linen font-bold uppercase tracking-widest text-[11px] sm:text-sm hover:bg-terracotta transition-colors rounded-sm pointer-events-auto shadow-lg active:scale-95"
-            >
-              Enter Build Studio <ArrowRight size={14} />
-            </Link>
+            
+            <div className="pt-4 flex flex-wrap gap-4">
+              <Link
+                href="/garage"
+                className="px-6 py-3.5 bg-white/5 hover:bg-white/10 text-sand font-bold uppercase tracking-wider text-xs border border-white/10 rounded transition-all"
+              >
+                Browse Templates
+              </Link>
+              <Link
+                href="/studio"
+                className="px-6 py-3.5 bg-terracotta text-white font-bold uppercase tracking-wider text-xs rounded hover:bg-[#A34322] transition-all"
+              >
+                Start from Scratch
+              </Link>
+            </div>
           </div>
 
-          <ShowroomControls />
-          <VehicleSwitcherBar />
-        </section>
+          {/* Right Column: Engineering Icons Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl space-y-3 hover:border-terracotta/35 transition-colors group">
+              <div className="w-10 h-10 rounded-lg bg-terracotta/10 border border-terracotta/20 flex items-center justify-center text-terracotta group-hover:bg-terracotta group-hover:text-white transition-colors">
+                <Hammer size={18} />
+              </div>
+              <h3 className="font-bold text-white text-base">CNC Joinery</h3>
+              <p className="text-xs text-slate-500 leading-relaxed">
+                Marine-grade plywood CNC-cut and joined with structural aluminum profiles to eliminate rattles.
+              </p>
+            </div>
 
-        {/* SECTION 1: GARAGE SHOWROOM */}
-        <section className="relative w-full h-full bg-[#0a0a0c] border-t border-white/5">
-          <GarageShowroom />
-        </section>
+            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl space-y-3 hover:border-sky-500/35 transition-colors group">
+              <div className="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-white transition-colors">
+                <Layers size={18} />
+              </div>
+              <h3 className="font-bold text-white text-base">Armaflex Shield</h3>
+              <p className="text-xs text-slate-500 leading-relaxed">
+                Dual-layered closed-cell foam insulation designed to lock out Sahara heat and Atlas alpine cold.
+              </p>
+            </div>
 
-        {/* SECTION 2: PLATFORM FEATURES BENTO GRID */}
-        <section className="relative w-full h-full bg-[#0a0a0c] border-t border-white/5 overflow-y-auto custom-scrollbar">
-          <FeaturesBentoGrid />
-        </section>
+            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl space-y-3 hover:border-emerald-500/35 transition-colors group">
+              <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                <Settings size={18} />
+              </div>
+              <h3 className="font-bold text-white text-base">Victron Power</h3>
+              <p className="text-xs text-slate-500 leading-relaxed">
+                Lithium iron phosphate (LiFePO4) battery hubs and smart solar controller integrations.
+              </p>
+            </div>
 
-      </div>
+            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl space-y-3 hover:border-purple-500/35 transition-colors group">
+              <div className="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                <Compass size={18} />
+              </div>
+              <h3 className="font-bold text-white text-base">Algiers Built</h3>
+              <p className="text-xs text-slate-500 leading-relaxed">
+                Engineered and road-tested across coastal cliffs, forest trails, and deep desert sand dunes.
+              </p>
+            </div>
+          </div>
 
-      {/* UNIVERSAL SECTION NAVIGATION CONTROLS (RIGHT SIDE VERTICAL STACK ON ALL SCREENS) */}
-      <div className={`flex absolute right-3 sm:right-8 flex-col gap-2.5 sm:gap-4 z-40 transition-all duration-700 ease-in-out ${
-        currentSection === 0 ? 'bottom-36 sm:bottom-8' : 'top-1/2 -translate-y-1/2'
-      }`}>
-        <button
-          onClick={() => setCurrentSection(Math.max(0, currentSection - 1))}
-          className={`w-9 h-9 sm:w-12 sm:h-12 bg-obsidian/80 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white hover:bg-terracotta hover:text-white transition-all duration-300 shadow-2xl active:scale-95 ${
-            currentSection === 0 ? 'opacity-0 translate-y-4 pointer-events-none' : 'opacity-100 translate-y-0'
-          }`}
-          title="Go Up to Previous Section"
-        >
-          <ChevronUp size={18} className="sm:w-5 sm:h-5" />
-        </button>
-        
-        <button
-          onClick={() => setCurrentSection(Math.min(2, currentSection + 1))}
-          className={`w-9 h-9 sm:w-12 sm:h-12 bg-obsidian/80 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white hover:bg-terracotta hover:text-white transition-all duration-300 shadow-2xl active:scale-95 ${
-            currentSection === 2 ? 'opacity-0 -translate-y-4 pointer-events-none' : 'opacity-100 translate-y-0'
-          } ${currentSection === 0 ? 'animate-bounce text-terracotta border-terracotta/50' : ''}`}
-          title="Go Down to Next Section"
-        >
-          <ChevronDown size={18} className="sm:w-5 sm:h-5" />
-        </button>
-      </div>
+        </div>
+      </section>
+
+      {/* SECTION 2: PLATFORM FEATURES BENTO GRID */}
+      <section className="relative w-full bg-[#0a0a0c] border-t border-white/5 py-12 shrink-0 z-10">
+        <FeaturesBentoGrid />
+      </section>
+
 
     </main>
   );

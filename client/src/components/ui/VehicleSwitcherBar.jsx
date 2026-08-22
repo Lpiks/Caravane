@@ -12,7 +12,7 @@ export default function VehicleSwitcherBar() {
   ];
 
   return (
-    <div className="fixed bottom-32 sm:bottom-8 left-1/2 -translate-x-1/2 z-30 max-w-[92vw]">
+    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 max-w-[92vw]">
       <div className="flex bg-obsidian/85 backdrop-blur-xl p-1.5 sm:p-2 rounded-full shadow-2xl border border-sand/20">
         {vehicles.map((v) => {
           const Icon = v.icon;
