@@ -25,10 +25,18 @@ class EnvironmentErrorBoundary extends React.Component {
   }
 }
 
-export default function SafeEnvironment(props) {
+const presetFiles = {
+  city: '/hdri/city.hdr',
+  sunset: '/hdri/sunset.hdr',
+  night: '/hdri/night.hdr'
+};
+
+export default function SafeEnvironment({ preset, ...props }) {
+  const file = presetFiles[preset] || presetFiles['city'];
+
   return (
     <EnvironmentErrorBoundary>
-      <Environment {...props} />
+      <Environment files={file} {...props} />
     </EnvironmentErrorBoundary>
   );
 }
