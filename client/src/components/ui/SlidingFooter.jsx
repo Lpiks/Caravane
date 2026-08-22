@@ -8,7 +8,7 @@ export default function SlidingFooter() {
   return (
     <>
       {/* Sleek Floating Action Button in the bottom-left corner */}
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 left-6 z-[110] w-12 h-12 bg-[#181A1D]/90 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-sand hover:text-white hover:bg-white/10 hover:scale-105 transition-all shadow-lg group"
         title="Info & Contact"
@@ -17,15 +17,14 @@ export default function SlidingFooter() {
       </button>
 
       {/* The Sliding Glass Drawer */}
-      <div 
-        className={`fixed bottom-0 left-0 w-full z-[100] bg-[#0F1115]/95 backdrop-blur-xl border-t border-white/10 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          isOpen ? 'translate-y-0' : 'translate-y-full'
-        }`}
+      <div
+        className={`fixed bottom-0 left-0 w-full z-[100] bg-[#0F1115]/95 backdrop-blur-xl border-t border-white/10 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${isOpen ? 'translate-y-0' : 'translate-y-full'
+          }`}
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
         <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
-            
+
             {/* Column 1: Brand */}
             <div className="col-span-1 md:col-span-1 space-y-4">
               <h2 className="text-2xl font-bold tracking-wider text-white">
@@ -53,7 +52,7 @@ export default function SlidingFooter() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-white/60 text-sm hover:text-white transition-colors cursor-pointer">
                   <MapPin size={16} className="mt-0.5 text-sand shrink-0" />
-                  <span>Shipping to all 58 Wilayas<br/>Algiers, Algeria</span>
+                  <span>Shipping to all 58 Wilayas<br />Algiers, Algeria</span>
                 </li>
                 <li className="flex items-center gap-3 text-white/60 text-sm hover:text-white transition-colors cursor-pointer">
                   <Phone size={16} className="text-sand shrink-0" />
@@ -85,10 +84,10 @@ export default function SlidingFooter() {
           </div>
         </div>
       </div>
-      
+
       {/* Overlay to dim background when open */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-[90] bg-black/40 backdrop-blur-sm transition-opacity duration-500 cursor-pointer"
           onClick={() => setIsOpen(false)}
         />

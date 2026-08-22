@@ -4,6 +4,7 @@ import { OrbitControls, ContactShadows } from "@react-three/drei";
 import { Suspense, useRef, useEffect, useState } from "react";
 import VehicleModel from "./VehicleModel";
 import EnvironmentLighting from "./EnvironmentLighting";
+import useVehicleStore from "@/store/useVehicleStore";
 
 function CameraController({ preset, controlsRef, isMobile }) {
   const { camera } = useThree();
@@ -41,6 +42,10 @@ function CameraController({ preset, controlsRef, isMobile }) {
 export default function ShowroomCanvas({ customModules, activeModelId, activeChassis, cameraPreset = 'iso' }) {
   const controlsRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+  const { selectedVehicle } = useVehicleStore();
+  
+  const finalVehicleId = activeModelId || selectedVehicle;
+  const isGiantVehicle = finalVehicleId === 'snvi-100-v8' || finalVehicleId === 'uk-double-decker';
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -81,7 +86,7 @@ export default function ShowroomCanvas({ customModules, activeModelId, activeCha
           {/* Shifted van further down (Y = -1.4m) on mobile viewports so roof clears CTA button */}
           <group 
             position={[0, isMobile ? -1.4 : 0, 0]} 
-            scale={isMobile ? 0.88 : 1.0}
+            scale={isGiantVehicle ? (isMobile ? 0.55 : 0.65) : (isMobile ? 0.88 : 1.0)}
           >
             <VehicleModel
               customModules={customModules}
@@ -92,7 +97,7 @@ export default function ShowroomCanvas({ customModules, activeModelId, activeCha
 
           <ContactShadows
             resolution={512}
-            scale={15}
+            scale={isGiantVehicle ? 20 : 15}
             blur={2}
             opacity={0.6}
             far={10}

@@ -52,7 +52,7 @@ const ShowroomVehicle = ({ vehicleId, headlightsOn, customModules }) => {
 
   // Memoized modules hydration with O(1) map lookup
   const displayModules = useMemo(() => {
-    const raw = customModules || (dbTemplates.length > 0 ? dbTemplates[0].modules : []);
+    const raw = customModules || (dbTemplates.length > 0 ? dbTemplates[dbTemplates.length - 1].modules : []);
     if (!raw) return [];
     const compMap = new Map(components.map(c => [c.id, c]));
     return raw.map(mod => {
