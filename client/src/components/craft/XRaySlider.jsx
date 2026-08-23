@@ -57,14 +57,17 @@ export default function XRaySlider() {
       >
         
         {/* Layer A (Background): Raw Skeleton */}
-        <div className="absolute inset-0 bg-[#22252a] flex flex-col items-end justify-center p-8 md:pr-16">
-          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(to right, #ffffff15 1px, transparent 1px), linear-gradient(to bottom, #ffffff15 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-          <h3 className="text-4xl md:text-5xl font-bold text-linen/20 uppercase tracking-widest text-right">
-            Structural Framing<br/>& 12V Wiring
-          </h3>
-          <p className="text-linen/40 font-mono mt-4 text-right max-w-sm z-10">
-            High-grade insulation batts, aluminum sub-framing, and Victron Energy conduits exposed.
-          </p>
+        <div className="absolute inset-0 bg-obsidian flex flex-col items-end justify-center p-8 md:pr-16">
+          <div className="absolute inset-0 bg-cover bg-center opacity-70" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1541888081691-38e2118335db?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')` }} />
+          <div className="absolute inset-0 bg-gradient-to-l from-obsidian/90 via-obsidian/40 to-transparent" />
+          <div className="relative z-10 text-right w-[80%] md:w-[40%] max-w-sm">
+            <h3 className="text-3xl md:text-5xl font-bold text-linen uppercase tracking-widest drop-shadow-lg leading-tight">
+              Structural Framing<br/>& 12V Wiring
+            </h3>
+            <p className="text-linen/70 font-mono mt-4 drop-shadow-md text-xs md:text-sm leading-relaxed">
+              High-grade insulation batts, aluminum sub-framing, and Victron Energy conduits exposed.
+            </p>
+          </div>
         </div>
 
         {/* Hotspots (Only visible on Raw Skeleton side) */}
@@ -107,26 +110,29 @@ export default function XRaySlider() {
 
         {/* Layer B (Foreground): Finished Interior */}
         <div 
-          className="absolute inset-0 bg-[#e3cdb7] flex flex-col items-start justify-center p-8 md:pl-16 pointer-events-none transition-all duration-75 ease-out"
+          className="absolute inset-0 bg-obsidian flex flex-col items-start justify-center p-8 md:pl-16 pointer-events-none transition-all duration-75 ease-out"
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, #181a1d 10px, #181a1d 20px)' }} />
-          <h3 className="text-4xl md:text-5xl font-bold text-obsidian/30 uppercase tracking-widest text-left">
-            Luxury Wood<br/>Finished Interior
-          </h3>
-          <p className="text-obsidian/50 font-mono mt-4 text-left max-w-sm z-10">
-            Marine-grade plywood, CNC-milled cabinetry, and premium upholstery.
-          </p>
+          <div className="absolute inset-0 bg-cover bg-center opacity-90" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')` }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-obsidian/90 via-obsidian/40 to-transparent" />
+          <div className="relative z-10 text-left w-[80%] md:w-[40%] max-w-sm">
+            <h3 className="text-3xl md:text-5xl font-bold text-sand uppercase tracking-widest drop-shadow-lg leading-tight">
+              Luxury Wood<br/>Finished Interior
+            </h3>
+            <p className="text-sand/80 font-mono mt-4 drop-shadow-md text-xs md:text-sm leading-relaxed">
+              Marine-grade plywood, CNC-milled cabinetry, and premium upholstery.
+            </p>
+          </div>
         </div>
 
         {/* Draggable Divider Line */}
         <div 
-          className="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] z-30 pointer-events-none flex items-center justify-center transition-all duration-75 ease-out"
+          className="absolute top-0 bottom-0 w-1 bg-terracotta shadow-[0_0_20px_rgba(224,122,95,0.8)] z-30 pointer-events-none flex items-center justify-center transition-all duration-75 ease-out"
           style={{ left: `${sliderPosition}%` }}
         >
           {/* Handle */}
-          <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-obsidian hover:scale-110 transition-transform cursor-ew-resize pointer-events-auto">
-            <MoveHorizontal size={24} />
+          <div className="w-12 h-12 bg-obsidian/80 backdrop-blur-md rounded-full shadow-lg border border-terracotta flex items-center justify-center text-terracotta hover:bg-terracotta hover:text-obsidian hover:scale-110 transition-all duration-300 cursor-ew-resize pointer-events-auto group">
+            <MoveHorizontal size={24} className="group-hover:animate-pulse" />
           </div>
         </div>
 

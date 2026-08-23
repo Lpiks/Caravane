@@ -1,4 +1,5 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_URL = API_BASE.endsWith('/api') ? API_BASE : `${API_BASE}/api`;
 
 const FALLBACK_VEHICLES = [
   {
@@ -54,7 +55,11 @@ export const submitInquiry = async (formData) => {
       },
       body: JSON.stringify(formData),
     });
-    if (!res.ok) throw new Error('Failed to submit inquiry');
+    if (!res.ok) {
+      const errorData = await res.json().catch(() => ({}));
+      console.error('Backend Error Response:', errorData);
+      throw new Error(errorData.message || 'Failed to submit inquiry');
+    }
     return await res.json();
   } catch (err) {
     console.error('API Error:', err);
