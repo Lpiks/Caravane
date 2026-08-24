@@ -100,7 +100,7 @@ function StudioContent() {
     <div className="w-full min-h-[100dvh] h-screen bg-linen flex flex-col overflow-hidden relative">
 
       {/* Top Header & Chassis Tabs */}
-      <div className="w-full bg-obsidian text-sand py-2.5 sm:py-4 px-3 sm:px-8 flex flex-wrap items-center justify-between border-b border-sand/20 shrink-0 gap-2 z-20">
+      <div className="w-full bg-obsidian text-sand py-2.5 sm:py-4 px-3 sm:px-8 flex flex-wrap items-center justify-between border-b border-sand/20 shrink-0 gap-2 z-50 relative">
         
         {/* Left: Logo & Model Selector */}
         <div className="flex items-center gap-2 sm:gap-4 flex-wrap">

@@ -23,7 +23,6 @@ export default function AdminComponentsClient() {
   const chassisOptions = [
     { id: 'compact-classic', label: 'Compact Class' },
     { id: 'standard-highroof', label: 'Standard Class' },
-    { id: 'minibus-canvas', label: 'Maxi Class' },
     { id: 'maxi-bus', label: 'Maxi Bus Class' }
   ];
 
@@ -91,7 +90,7 @@ export default function AdminComponentsClient() {
            if (!compToDelete.targetChassis || compToDelete.targetChassis === 'all') {
              compatible = ['compact-classic', 'standard-highroof', 'minibus-canvas', 'maxi-bus'];
            } else {
-             const legacyMap = { 't3': 'compact-classic', 'l3h2': 'standard-highroof', 'minibus': 'minibus-canvas' };
+             const legacyMap = { 't3': 'compact-classic', 'l3h2': 'standard-highroof', 'minibus': 'maxi-bus' };
              compatible = [legacyMap[compToDelete.targetChassis] || compToDelete.targetChassis];
            }
         }
@@ -128,14 +127,11 @@ export default function AdminComponentsClient() {
        let compatible = c.compatibleChassis || [];
        if (compatible.length === 0) {
          if (!c.targetChassis || c.targetChassis === 'all') return true;
-         const legacyMap = { 't3': 'compact-classic', 'l3h2': 'standard-highroof', 'minibus': 'minibus-canvas' };
+         const legacyMap = { 't3': 'compact-classic', 'l3h2': 'standard-highroof', 'minibus': 'maxi-bus' };
          return (legacyMap[c.targetChassis] || c.targetChassis) === activeChassis;
        }
-       // If compatible with minibus-canvas, it is also compatible with maxi-bus class!
-       const effectiveCompatible = [...compatible];
-       if (effectiveCompatible.includes('minibus-canvas') && !effectiveCompatible.includes('maxi-bus')) {
-         effectiveCompatible.push('maxi-bus');
-       }
+       // Map legacy minibus-canvas to maxi-bus
+       const effectiveCompatible = compatible.map(x => x === 'minibus-canvas' ? 'maxi-bus' : x);
        return effectiveCompatible.includes(activeChassis);
     })
     .map(c => ({ ...c, icon: c.icon === 'Ruler' ? Ruler : Box }));
@@ -144,7 +140,7 @@ export default function AdminComponentsClient() {
 
   const getActiveL = (comp) => {
     if (comp?.chassisOverrides?.[activeChassis]?.l) return comp.chassisOverrides[activeChassis].l;
-    return comp?.id === 'bed-fixed' ? (activeChassis === 'compact-classic' ? 140 : activeChassis === 'minibus-canvas' ? 200 : 185) : (comp?.defaultL || 100);
+    return comp?.id === 'bed-fixed' ? (activeChassis === 'compact-classic' ? 140 : 185) : (comp?.defaultL || 100);
   };
   const getActiveW = (comp) => {
     if (comp?.chassisOverrides?.[activeChassis]?.w) return comp.chassisOverrides[activeChassis].w;

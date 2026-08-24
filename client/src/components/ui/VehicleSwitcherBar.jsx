@@ -8,7 +8,7 @@ export default function VehicleSwitcherBar() {
   const vehicles = [
     { id: 'vw-t3', label: 'Compact', fullLabel: 'Compact Class', icon: Car },
     { id: 'renault-master', label: 'Standard', fullLabel: 'Standard Class', icon: Bus },
-    { id: 'toyota-coaster', label: 'Maxi', fullLabel: 'Maxi Class', icon: Bus }
+    { id: 'toyota-coaster', label: 'Maxi Bus', fullLabel: 'Maxi Bus Class', icon: Bus }
   ];
 
   return (

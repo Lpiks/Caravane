@@ -11,7 +11,7 @@ import { useEffect } from "react";
 const ShowroomCanvas = dynamic(() => import("@/components/3d/ShowroomCanvas"), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-full absolute inset-0 bg-[#0d0e12] flex items-center justify-center text-sand/50 uppercase tracking-widest font-mono text-[10px] sm:text-xs">
+    <div className="w-full h-full absolute inset-0 bg-sky-50 flex items-center justify-center text-slate-500 uppercase tracking-widest font-mono text-[10px] sm:text-xs">
       Initializing 3D Showroom...
     </div>
   )

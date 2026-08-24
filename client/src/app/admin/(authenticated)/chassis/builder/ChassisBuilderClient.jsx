@@ -523,8 +523,7 @@ export default function ChassisBuilderClient() {
                   {[
                     { id: 'all', label: 'All Chassis (Generic)' },
                     { id: 't3', label: 'Compact Class' },
-                    { id: 'l3h2', label: 'Standard Class' },
-                    { id: 'minibus', label: 'Maxi Class' }
+                    { id: 'l3h2', label: 'Standard Class' }
                   ].map(chassis => (
                     <button
                       key={chassis.id}

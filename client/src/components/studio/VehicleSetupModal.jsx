@@ -1,10 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import useStudioStore from "@/store/useStudioStore";
 import useChassisStore from "@/store/useChassisStore";
-import { ArrowRight, Car, CheckCircle2, Loader2, X } from "lucide-react";
+import { ArrowRight, ArrowLeft, Car, CheckCircle2, Loader2, X } from "lucide-react";
 
 export default function VehicleSetupModal() {
+  const router = useRouter();
   const { hasChosenVehicle, setVehicle, activeChassis, activeModelId, setHasChosenVehicle } = useStudioStore();
   const { fetchChassis, chassis, isLoading } = useChassisStore();
   
@@ -28,11 +30,6 @@ export default function VehicleSetupModal() {
       name: 'Standard Class',
       description: 'The golden mean for full-time vanlife and comfort.',
       imagePlaceholder: '🚐'
-    },
-    'minibus-canvas': {
-      name: 'Maxi Class',
-      description: 'Maximum space for large families or luxury builds.',
-      imagePlaceholder: '🚌'
     },
     'maxi-bus': {
       name: 'Maxi Bus Class',
@@ -72,9 +69,18 @@ export default function VehicleSetupModal() {
         
         {/* Header */}
         <div className="p-4 sm:p-8 border-b border-white/5 shrink-0 flex items-center justify-between">
-          <div>
-            <h2 className="text-xl sm:text-3xl font-bold text-linen tracking-tight">Configure Your Build</h2>
-            <p className="text-xs sm:text-sm text-sand/60 mt-0.5 sm:mt-1">Select your base vehicle to enter the 3D Studio.</p>
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={() => router.back()}
+              className="p-2 sm:p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-sand hover:text-white transition-colors border border-white/5 shrink-0"
+              title="Go Back"
+            >
+              <ArrowLeft size={20} />
+            </button>
+            <div>
+              <h2 className="text-xl sm:text-3xl font-bold text-linen tracking-tight">Configure Your Build</h2>
+              <p className="text-xs sm:text-sm text-sand/60 mt-0.5 sm:mt-1">Select your base vehicle to enter the 3D Studio.</p>
+            </div>
           </div>
           {activeModelId && (
             <button 

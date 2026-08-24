@@ -276,7 +276,7 @@ export default function ComponentBuilderClient() {
       type: 'static',
       targetChassis,
       compatibleChassis: targetChassis === 'all' 
-        ? ['compact-classic', 'standard-highroof', 'minibus-canvas', 'maxi-bus'] 
+        ? ['compact-classic', 'standard-highroof', 'maxi-bus'] 
         : [targetChassis],
       defaultL: basePart.size?.[0] || 100,
       defaultW: basePart.size?.[1] || 100,
@@ -448,8 +448,7 @@ export default function ComponentBuilderClient() {
               <span className="font-semibold text-white">
                 {targetChassis === 'all' ? 'All' :
                   targetChassis === 'compact-classic' ? 'Compact' :
-                    targetChassis === 'standard-highroof' ? 'Standard' :
-                      targetChassis === 'minibus-canvas' ? 'Maxi' : 'Maxi Bus'}
+                    targetChassis === 'standard-highroof' ? 'Standard' : 'Maxi Bus'}
               </span>
               <ChevronDown size={14} className={`text-slate-400 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -461,7 +460,6 @@ export default function ComponentBuilderClient() {
                     { id: 'all', label: 'All Chassis (Generic)' },
                     { id: 'compact-classic', label: 'Compact Class' },
                     { id: 'standard-highroof', label: 'Standard Class' },
-                    { id: 'minibus-canvas', label: 'Maxi Class' },
                     { id: 'maxi-bus', label: 'Maxi Bus Class' }
                   ].map(chassis => (
                     <button

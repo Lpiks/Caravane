@@ -169,7 +169,7 @@ export default function AdminTemplatesClient() {
       </div>
 
       {/* Right Panel (Detail View) */}
-      <div className={`flex-1 flex flex-col relative bg-gradient-to-br from-[#181A1D] to-black ${
+      <div className={`flex-1 min-w-0 flex flex-col relative bg-gradient-to-br from-[#181A1D] to-black ${
         mobileTab === 'preview' ? 'flex' : 'hidden md:flex'
       }`}>
         {selectedTemplate ? (

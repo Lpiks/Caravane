@@ -82,6 +82,31 @@ const ShowroomVehicle = ({ vehicleId, headlightsOn, customModules }) => {
       fh = ((floorPart.offset[1] || 0) + (floorPart.size[2] || 0)) * 0.01;
     }
 
+    // Calculate dynamic roof lights
+    let roofHeight = 2.18;
+    const roofPart = dbChassis.parts?.find(p => p.name?.toLowerCase().includes('roof') || p.name?.toLowerCase().includes('ceiling'));
+    if (roofPart && roofPart.offset) {
+      // In CustomProceduralChassis, offset[1] is the bottom edge of the part
+      roofHeight = (roofPart.offset[1] * 0.01) - 0.01; 
+    }
+
+    let xPositions = [-1.0, 1.0];
+    if (floorPart && floorPart.size) {
+      // In CustomProceduralChassis, size[0] is the X-axis length (scaledL)
+      const length = (floorPart.size[0] || 400) * 0.01;
+      
+      if (length < 3.5) {
+        // Version 1 (Short vans): Keep exactly as before
+        xPositions = [-length * 0.25, length * 0.25];
+      } else {
+        // Version 2+ (Longer vans): 3 lights, tighter spacing to avoid hitting the front/windshield
+        xPositions = [-length * 0.15, 0, length * 0.15];
+      }
+    }
+
+    // Relative Y position for the lights inside the floor-offset group
+    const lightLocalY = roofHeight - fh;
+
     return (
       <group ref={groupRef} position={[0, fh, 0]}>
         <group 
@@ -92,6 +117,25 @@ const ShowroomVehicle = ({ vehicleId, headlightsOn, customModules }) => {
             <CustomProceduralChassis chassis={dbChassis} />
           </group>
         </group>
+
+        {/* Dynamic Interior Ceiling Spotlights */}
+        {headlightsOn && xPositions.map((xPos, i) => (
+          <group key={`dyn-light-${i}`} position={[xPos, lightLocalY, 0]}>
+            <mesh position={[0, 0, 0]}>
+              <cylinderGeometry args={[0.08, 0.08, 0.015, 32]} />
+              <meshStandardMaterial color="#ffffff" emissive="#fffae6" emissiveIntensity={3} />
+            </mesh>
+            <pointLight 
+              position={[0, -0.05, 0]}
+              intensity={8} 
+              distance={4}
+              decay={2} 
+              color="#fffae6" 
+              castShadow 
+            />
+          </group>
+        ))}
+
         {displayModules.map(mod => (
           <ModuleMesh3D key={mod.id} mod={mod} isReadonly={true} />
         ))}

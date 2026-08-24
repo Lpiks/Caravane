@@ -1,38 +1,9 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Plus, Search, Edit2 } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-const vehicles = [
-  {
-    id: 1,
-    name: 'Mercedes Sprinter 4x4',
-    subtitle: '2.3L Diesel High-Roof',
-    type: 'Camper Van',
-    price: '12,500,000',
-    status: 'Available',
-    image: 'https://images.unsplash.com/photo-1527786356703-4b100091cd2c?q=80&w=200&auto=format&fit=crop'
-  },
-  {
-    id: 2,
-    name: 'Renault Master L3H2',
-    subtitle: 'Extended Chassis',
-    type: 'Camper Van',
-    price: '8,200,000',
-    status: 'Rented',
-    image: 'https://images.unsplash.com/photo-1566830646346-6084620f3a67?q=80&w=200&auto=format&fit=crop'
-  },
-  {
-    id: 3,
-    name: 'Toyota Coaster',
-    subtitle: 'Minibus Conversion',
-    type: 'Rental Unit',
-    price: '25,000 / Day',
-    status: 'Sold',
-    image: 'https://images.unsplash.com/photo-1601700676450-45c1dfd490b4?q=80&w=200&auto=format&fit=crop'
-  }
-];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -48,6 +19,40 @@ const cardVariants = {
 };
 
 export default function FleetClient() {
+  const [vehicles, setVehicles] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchVehicles = async () => {
+      try {
+        const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+        const API_URL = API_BASE.endsWith('/api') ? API_BASE : `${API_BASE}/api`;
+        
+        const res = await fetch(`${API_URL}/vehicles`);
+        const data = await res.json();
+        
+        const formattedData = data.map(v => ({
+          ...v,
+          id: v._id,
+          name: v.title || 'Unnamed Vehicle',
+          subtitle: v.chassis || 'No Chassis Info',
+          type: v.type === 'rental' ? 'Rental Unit' : 'Camper Van',
+          price: v.price || 'N/A',
+          status: (v.status || 'available').charAt(0).toUpperCase() + (v.status || 'available').slice(1),
+          image: (v.images && v.images.length > 0) ? v.images[0] : 'https://images.unsplash.com/photo-1527786356703-4b100091cd2c?q=80&w=200&auto=format&fit=crop'
+        }));
+        
+        setVehicles(formattedData);
+      } catch (err) {
+        console.error('Failed to fetch vehicles', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchVehicles();
+  }, []);
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">

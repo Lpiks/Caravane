@@ -42,14 +42,12 @@ export default function AdminChassisClient() {
   const filterTabs = [
     { id: 'all', label: 'All Chassis', icon: Layers },
     { id: 't3', label: 'Compact Class', icon: Truck },
-    { id: 'l3h2', label: 'Standard Class', icon: Truck },
-    { id: 'minibus', label: 'Maxi Class', icon: Truck }
+    { id: 'l3h2', label: 'Standard Class', icon: Truck }
   ];
 
   const getClassName = (typeId) => {
     if (typeId === 't3') return 'COMPACT CLASS';
     if (typeId === 'l3h2') return 'STANDARD CLASS';
-    if (typeId === 'minibus') return 'MAXI CLASS';
     return 'CUSTOM CHASSIS';
   };
 

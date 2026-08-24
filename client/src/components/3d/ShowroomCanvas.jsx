@@ -81,7 +81,9 @@ export default function ShowroomCanvas({ customModules, activeModelId, activeCha
 
           <CameraController preset={cameraPreset} controlsRef={controlsRef} isMobile={isMobile} />
 
-          <EnvironmentLighting />
+          <Suspense fallback={null}>
+            <EnvironmentLighting />
+          </Suspense>
 
           {/* Shifted van further down (Y = -1.4m) on mobile viewports so roof clears CTA button */}
           <group 
