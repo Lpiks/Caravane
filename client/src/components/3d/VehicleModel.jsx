@@ -131,7 +131,6 @@ const ShowroomVehicle = ({ vehicleId, headlightsOn, customModules }) => {
               distance={4}
               decay={2} 
               color="#fffae6" 
-              castShadow 
             />
           </group>
         ))}
@@ -189,7 +188,6 @@ const ShowroomVehicle = ({ vehicleId, headlightsOn, customModules }) => {
               distance={4}
               decay={2} 
               color="#fffae6" 
-              castShadow 
             />
           </group>
         ))}

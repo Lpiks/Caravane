@@ -61,8 +61,9 @@ export default function ShowroomCanvas({ customModules, activeModelId, activeCha
     >
       <Canvas
         shadows
+        dpr={isMobile ? 1 : [1, 1.5]}
         camera={{ position: isMobile ? [6.2, 2.8, 7.2] : [5, 3, 6], fov: isMobile ? 48 : 45 }}
-        gl={{ antialias: true, preserveDrawingBuffer: false, powerPreference: "high-performance" }}
+        gl={{ antialias: !isMobile, preserveDrawingBuffer: false, powerPreference: "high-performance" }}
         style={{ touchAction: 'none' }}
       >
         <Suspense fallback={null}>
@@ -98,7 +99,8 @@ export default function ShowroomCanvas({ customModules, activeModelId, activeCha
           </group>
 
           <ContactShadows
-            resolution={512}
+            frames={1}
+            resolution={isMobile ? 256 : 512}
             scale={isGiantVehicle ? 20 : 15}
             blur={2}
             opacity={0.6}
