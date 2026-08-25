@@ -61,9 +61,9 @@ export default function ShowroomCanvas({ customModules, activeModelId, activeCha
     >
       <Canvas
         shadows
-        dpr={isMobile ? 1 : [1, 1.5]}
+        dpr={[1, 1.5]}
         camera={{ position: isMobile ? [6.2, 2.8, 7.2] : [5, 3, 6], fov: isMobile ? 48 : 45 }}
-        gl={{ antialias: !isMobile, preserveDrawingBuffer: false, powerPreference: "high-performance" }}
+        gl={{ antialias: false, preserveDrawingBuffer: false, powerPreference: "high-performance" }}
         style={{ touchAction: 'none' }}
       >
         <Suspense fallback={null}>
