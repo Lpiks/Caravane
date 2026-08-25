@@ -45,7 +45,7 @@ export default function ShowroomControls() {
   return (
     <>
       {/* DESKTOP CONTROLS (md:flex) */}
-      <div className="hidden md:flex fixed top-24 right-8 z-30 flex-col gap-5 items-end">
+      <div className="hidden md:flex fixed top-32 right-8 z-30 flex-col gap-5 items-end">
 
         {/* Headlights Toggle */}
         <div className="flex flex-col items-end gap-1.5">

@@ -1,7 +1,9 @@
 require('dotenv').config(); // Load env variables
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
 const connectDB = require('./config/db');
+const mongoSanitize = require('express-mongo-sanitize');
 
 // Initialize Express app
 const app = express();
@@ -21,16 +23,33 @@ connectDB().then(() => {
 });
 
 // Middleware
+// 1. Add Helmet for HTTP Header Security
+app.use(helmet({ crossOriginResourcePolicy: false }));
+
+// 2. Strict CORS Configuration
 let allowedOrigin = process.env.CLIENT_URL;
-if (allowedOrigin && allowedOrigin.endsWith('/')) {
+if (!allowedOrigin) {
+  // Safe fallback for local dev if .env is missing. DO NOT allow '*'.
+  console.warn("WARNING: CLIENT_URL is not set in .env! CORS is locked to localhost.");
+  allowedOrigin = 'http://localhost:3000';
+} else if (allowedOrigin.endsWith('/')) {
   allowedOrigin = allowedOrigin.slice(0, -1);
 }
 
 app.use(cors({
-  origin: allowedOrigin ? allowedOrigin : '*',
+  origin: allowedOrigin,
   credentials: true
 }));
-app.use(express.json()); // Parse JSON bodies
+app.use(express.json({ limit: '2mb' })); // Strict 2 Megabyte limit on JSON bodies
+app.use(express.urlencoded({ extended: true, limit: '2mb' })); // Limit URL-encoded bodies
+
+// Data sanitization against NoSQL query injection (Custom wrapper to avoid Express getter crash)
+app.use((req, res, next) => {
+  if (req.body) mongoSanitize.sanitize(req.body, { replaceWith: '_' });
+  if (req.params) mongoSanitize.sanitize(req.params, { replaceWith: '_' });
+  if (req.query) mongoSanitize.sanitize(req.query, { replaceWith: '_' });
+  next();
+});
 
 // Basic root route
 app.get('/', (req, res) => {

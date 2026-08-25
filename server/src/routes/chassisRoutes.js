@@ -7,14 +7,15 @@ const {
   updateChassis,
   deleteChassis
 } = require('../controllers/chassisController');
+const { protect } = require('../middleware/authMiddleware');
 
 router.route('/')
   .get(getChassis)
-  .post(createChassis);
+  .post(protect, createChassis);
 
 router.route('/:id')
   .get(getChassisById)
-  .put(updateChassis)
-  .delete(deleteChassis);
+  .put(protect, updateChassis)
+  .delete(protect, deleteChassis);
 
 module.exports = router;

@@ -7,14 +7,15 @@ const {
   updateComponent,
   deleteComponent
 } = require('../controllers/componentController');
+const { protect } = require('../middleware/authMiddleware');
 
 router.route('/')
   .get(getComponents)
-  .post(createComponent);
+  .post(protect, createComponent);
 
 router.route('/:id')
   .get(getComponentById)
-  .put(updateComponent)
-  .delete(deleteComponent);
+  .put(protect, updateComponent)
+  .delete(protect, deleteComponent);
 
 module.exports = router;

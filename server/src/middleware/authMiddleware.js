@@ -10,7 +10,10 @@ const protect = async (req, res, next) => {
   ) {
     try {
       token = req.headers.authorization.split(' ')[1];
-      const secret = process.env.JWT_SECRET || 'kouini_caravane_jwt_secret_key_2026_super_secure';
+      const secret = process.env.JWT_SECRET;
+      if (!secret) {
+        throw new Error("FATAL SECURITY ERROR: JWT_SECRET is not defined in environment variables.");
+      }
 
       const decoded = jwt.verify(token, secret);
       req.admin = await Admin.findById(decoded.id).select('-password');
