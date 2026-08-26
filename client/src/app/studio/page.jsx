@@ -238,9 +238,9 @@ function StudioContent() {
 
         {/* Right: Build Specs Dashboard (Desktop Sidebar + Mobile Bottom Drawer) */}
         <div className={`
-          lg:static fixed inset-x-0 bottom-0 z-40 lg:z-20 w-full lg:w-96 bg-obsidian p-4 sm:p-6 border-l border-white/10 overflow-y-auto studio-scrollbar-dark transition-transform duration-300 flex flex-col
+          lg:static fixed inset-x-0 bottom-0 z-[60] lg:z-20 w-full lg:w-96 bg-obsidian p-4 sm:p-6 border-l border-white/10 overflow-y-auto studio-scrollbar-dark transition-transform duration-300 flex flex-col
           ${isMobileSpecsOpen 
-            ? 'h-[85vh] rounded-t-3xl border-t border-white/20 shadow-2xl translate-y-0' 
+            ? 'h-[85dvh] rounded-t-3xl border-t border-white/20 shadow-2xl translate-y-0' 
             : 'translate-y-full lg:translate-y-0 lg:h-full'
           }
         `}>
