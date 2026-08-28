@@ -76,7 +76,7 @@ export default function SlidingFooter() {
           {/* Bottom Bar: Developer Credit */}
           <div className="mt-16 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/40 text-xs">
-              Built with passion by <span className="font-bold text-white hover:text-sand cursor-pointer transition-colors">Abdelhadi Hammaz</span>.
+              Built with passion by <a href="https://abdelhadi-hammaz.netlify.app/" target="_blank" rel="noopener noreferrer" className="font-bold text-white hover:text-sand cursor-pointer transition-colors">AbdelhadiHammaz</a>.
             </p>
             <p className="text-white/40 text-xs">
               &copy; {new Date().getFullYear()} Kouini Caravane. All rights reserved.
